@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Portfolio of Emperor, a web developer specializing in responsive and modern websites." />
+  <meta name="keywords" content="Web Developer, Portfolio, HTML, CSS, JavaScript, Responsive Design" />
+  <meta name="author" content="Emperor" />
+  <meta property="og:title" content="Emperor – Web Developer" />
+  <meta property="og:description"
+    content="Portfolio of Emperor, a web developer specializing in responsive and modern websites." />
+  <meta property="og:image" content="images/profile_pic.jpg" />
+  <meta property="og:url" content="https://your-portfolio-link.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>Emperor – Web Developer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_TRACKING_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "YOUR_TRACKING_ID");
+  </script>
+</head>
+
+<body class="dark-mode">
+  <div id="loading">
+    <img src="images/loading.gif" alt="Loading" />
+  </div>
+  <script>
+    window.addEventListener("load", () => {
+      document.getElementById("loading").style.display = "none";
+    });
+  </script>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container">
+      <a href="#hero" class="logo">Emperor</a>
+      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+      <nav class="site-nav">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button id="theme-switch" aria-label="Toggle theme">🌙</button>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="hero" class="hero">
+    <img src="images/background_image.jpg" alt="Modern office" class="hero-img" />
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <h1>Hi, I’m Emperor</h1>
+        <p>Turning ideas into reality with sleek, responsive websites</p>
+        <a href="#about" class="btn">Learn More About Me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT ME SECTION -->
+  <section id="about" class="about">
+    <div class="about-container">
+      <div class="about-photo-wrapper">
+        <img src="images/profile_pic.jpg" alt="Profile Picture" class="about-photo" />
+      </div>
+      <div class="about-text" data-aos="fade-right">
+        <h2>About Me</h2>
+        <p>
+          Hi, I'm Emperor, a passionate and dedicated beginner in the world of
+          web development and founder of EmperorTech_Studio (E_TECH). I have a
+          keen interest in technology and a strong desire to learn and grow in
+          this field. I am currently focused on mastering HTML, CSS, and
+          JavaScript to build dynamic and interactive websites. My goal is to
+          create user-friendly and visually appealing websites that provide a
+          seamless experience for users. I am always eager to take on new
+          challenges and expand my skill set. I’m ready to take on new
+          challenges and contribute in meaningful ways.
+        </p>
+        <p>EmperorTech_Studio turning ideas into reality.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section id="skills" class="skills">
+    <h2>My Skills</h2>
+    <hr>
+    <ul>
+      <li>HTML5</li>
+      <li>CSS3</li>
+      <li>JavaScript (ES6+)</li>
+      <li>React.js</li>
+      <li>Git & GitHub</li>
+      <li>Responsive Design</li>
+    </ul>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <div class="project-card-img-wrapper">
+          <img src="Calm Pressure Clothing/image/project_card.png" alt="Calm Pressure Clothing"
+            class="project-card-img" />
+        </div>
+        <div class="project-card-content">
+          <h3>Homepage screenshot of Calm Pressure Clothing website</h3>
+          <p>Calm Pressure Clothing is a stylish and responsive website built to showcase a premium tailoring brand. The
+            project highlights various categories of custom-made clothing, including wedding outfits, casual wears,
+            occasional pieces, and button-down shirts.
+          </p>
+          <div class="project-links">
+            <a href="Calm Pressure Clothing/index.html" target="_blank"
+              aria-label="View Calm Pressure Clothing Project">View Project</a>
+            <a href="https://github.com//E-Tech070" target="_blank"
+              aria-label="View Calm Pressure Clothing Source Code">Source Code</a>
+          </div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-card-img-wrapper">
+          <img src="images/another_project.jpg" alt="Another Project" class="project-card-img" />
+        </div>
+        <div class="project-card-content">
+          <h3>Another Project</h3>
+          <p>A brief description of another project you’ve worked on.</p>
+          <div class="project-links">
+            <a href="https://your-live-demo-link.com" target="_blank">View Project</a>
+            <a href="https://github.com//E-Tech070" target="_blank">Source Code</a>
+          </div>
+        </div>
+      </div>
+      <!-- Add other project cards here -->
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS SECTION -->
+  <section id="testimonials" class="testimonials">
+    <h2>What People Say</h2>
+    <div class="testimonial">
+      <p>
+        "Emperor is a fantastic developer! The website he built for me
+        exceeded my expectations."
+      </p>
+      <h4>- Client Name</h4>
+    </div>
+    <div class="testimonial">
+      <p>"Great attention to detail and a pleasure to work with."</p>
+      <h4>- Another Client</h4>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <form class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+    <div class="contact-info">
+      <p>
+        Email:
+        <a href="mailto:kelvinriches7@gmail.com">kelvinriches7@gmail.com</a>
+      </p>
+      <p>Phone: +2348107796481</p>
+      <a href="https://linkedin.com/in/emperortechstudio" target="_blank">LinkedIn</a>
+      <a href="https://github.com/E-Tech070" target="_blank">GitHub</a>
+      <a href="mailto:kelvinriches7@gmail.com">Email</a>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 EmperorTech_Studio. All rights reserved.</p>
+      <div class="social-links">
+
+
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="js/smooth-scroll.js"></script>
+  <script src="js/menu-toggle.js"></script>
+  <script src="js/theme-switch.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script src="js/email.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

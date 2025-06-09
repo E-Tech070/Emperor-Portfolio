@@ -1,0 +1,439 @@
+/* ————————————————————————————————————
+   VARIABLES & BASE
+   ———————————————————————————————————— */
+:root {
+  --bg: #f4f4f4;
+  --text: #1f2937;
+  --accent: #3b82f6;
+  --overlay: rgba(0, 0, 0, 0.6);
+}
+[data-theme="dark"] {
+  --bg: #1a1a1a;
+  --text: #e5e7eb;
+  --accent: #2563eb;
+  --overlay: rgba(0, 0, 0, 0.7);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Default (light theme) styles */
+body {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Dark theme styles */
+html[data-theme="dark"] body {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* Example for other elements */
+html[data-theme="dark"] .site-header {
+  background-color: #1e1e1e;
+}
+
+html[data-theme="dark"] .btn {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ————————————————————————————————————
+     HEADER & NAV
+     ———————————————————————————————————— */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--bg);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+.logo {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--text);
+  text-decoration: none;
+}
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.site-nav {
+  display: flex;
+  gap: 1rem;
+}
+.site-nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+}
+#theme-switch {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+/* Mobile nav */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    flex-direction: column;
+    background: var(--bg);
+    width: 200px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  .site-nav.open {
+    display: flex;
+  }
+}
+
+/* ————————————————————————————————————
+     HERO
+     ———————————————————————————————————— */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  margin-top: 60px; /* push below fixed header */
+}
+.hero-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--overlay);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  padding: 0 20px;
+}
+.hero-content {
+  text-align: center;
+  color: #fff;
+  max-width: 600px;
+  z-index: 3;
+}
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+.btn:hover {
+  background: darken(var(--accent), 10%);
+}
+
+/* ————————————————————————————————————
+     ABOUT
+     ———————————————————————————————————— */
+/* Subtle divider for sections */
+.about {
+  border-top: 1px solid #dddddd; /* Light gray divider for light mode */
+  border-bottom: 1px solid #dddddd;
+}
+
+html[data-theme="dark"] .about {
+  border-top: 1px solid #333333; /* Dark gray divider for dark mode */
+  border-bottom: 1px solid #333333;
+}
+.about-container {
+  background: rgba(255, 255, 255, 0.9);
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  gap: 2rem;
+  padding: 40px;
+  border-radius: 10px;
+  flex-wrap: wrap;
+}
+.about-photo-wrapper {
+  flex: 0 0 250px;
+  text-align: center;
+}
+.about-photo {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0; /* square now */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+.about-text {
+  flex: 1;
+}
+.about-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.about-text p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+/* ————————————————————————————————————
+     PROJECTS
+     ———————————————————————————————————— */
+.projects {
+  padding: 80px 20px;
+  text-align: center;
+  font-size: 1rem;
+}
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 40px auto 0;
+}
+.project-card {
+  position: relative;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  max-width: 260px; /* reduce from 320px or 400px */
+  margin: 12px auto; /* reduce vertical spacing */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0;
+}
+
+.project-card:hover {
+  box-shadow: 0 12px 40px rgba(99, 102, 241, 0.18),
+    0 2px 8px rgba(0, 0, 0, 0.12);
+  border-color: #060606;
+  transform: translateY(-6px) scale(1.03);
+}
+
+.project-card-img-wrapper {
+  width: 100%;
+  height: 160px; /* Increased from 120px */
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-card-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+}
+
+.project-card-content {
+  padding: 0.6rem 0.5rem 0.7rem 0.5rem; /* reduce padding */
+  text-align: center;
+}
+
+.project-card h3 {
+  margin: 0 0 0.4rem 0;
+  font-size: 1.05rem; /* reduce font size */
+  font-weight: 700;
+}
+
+.project-card p {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.93rem; /* reduce font size */
+}
+
+.project-links {
+  display: flex;
+  justify-content: center;
+  gap: 0.7rem;
+  margin-top: 0.5rem;
+}
+
+.project-links a {
+  padding: 6px 12px; /* reduce button size */
+  font-size: 0.93rem;
+  background-color: #050506;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.project-links a:hover {
+  background-color: #4338ca;
+}
+
+/* Show project card text in dark mode */
+body.dark-mode .project-card,
+body.dark-mode .project-card-content {
+  background: #23272f !important;
+}
+
+body.dark-mode .project-card h3,
+body.dark-mode .project-card p,
+body.dark-mode .project-links a {
+  color: #fff !important;
+}
+
+/* ————————————————————————————————————
+     CONTACT
+     ———————————————————————————————————— */
+.contact {
+  background: var(--bg);
+  padding: 80px 20px;
+  text-align: center;
+}
+.contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.contact-form button {
+  align-self: flex-end;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #ccc;
+  border-top-color: #007bff; /* Blue spinner */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ————————————————————————————————————
+     NOT FOUND
+     ———————————————————————————————————— */
+.not-found {
+  text-align: center;
+  padding: 100px 20px;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.not-found h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #ff0000; /* Red for emphasis */
+}
+
+.not-found p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.not-found a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.not-found a:hover {
+  background-color: #0056b3;
+}
+
+/* ————————————————————————————————————
+     RESPONSIVE
+     ———————————————————————————————————— */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr; /* Stack projects vertically */
+  }
+}
+
+/* About section text color for both light and dark modes */
+.about {
+  background-color: var(
+    --bg
+  ); /* Keep the background dynamic based on the theme */
+  color: #000000; /* Force black text for both themes */
+}
+
+html[data-theme="dark"] .about {
+  background-color: var(--bg); /* Keep the background dynamic for dark mode */
+  color: #000000; /* Force black text in dark mode */
+}
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
