@@ -1,4 +1,4 @@
-#Emperor-Portfolio
+#Emperor Portfolio Website
 
 
 This is my personal web developer portfolio showcasing my projects, skills, and contact information. It's fully responsive and built using HTML, CSS, and JavaScript.
@@ -29,4 +29,4 @@ Feel free to reach out:
 
 - Email: kelvinriches7@gmail.com
 - LinkedIn: [your-link](https://linkedin.com/in/emperortechstudio)
-t.
+
