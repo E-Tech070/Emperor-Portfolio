@@ -28,5 +28,5 @@ This is my personal web developer portfolio showcasing my projects, skills, and 
 Feel free to reach out:
 
 - Email: kelvinriches7@gmail.com
-- LinkedIn: [your-link](https://linkedin.com/in/emperortechstudio)
+- LinkedIn: (https://linkedin.com/in/emperortechstudio)
 
