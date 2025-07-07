@@ -1,29 +1,32 @@
-# Emperor's Portfolio Website
+#Emperor Portfolio Website
 
-Welcome to my professional portfolio website, built with HTML, CSS, and JavaScript. This site showcases my journey in web development, my projects, and my design skills.
 
-🔗 **Live Website:** [https://e-tech070.github.io/Emperor-Portfolio/](https://e-tech070.github.io/Emperor-Portfolio/)
+This is my personal web developer portfolio showcasing my projects, skills, and contact information. It's fully responsive and built using HTML, CSS, and JavaScript.
 
-## ✨ Features
+## 🔗 Live Demo
 
-- Responsive layout
-- Project cards
-- Animated sections
-- Dark/light theme switch
-- Contact section
+👉 [View the Live Site](https://E-Tech070.github.io/Emperor-Portfolio/)
 
-## 🛠️ Tools Used
+## 💡 Features
 
-- HTML5
-- CSS3
+- Responsive design for mobile and desktop
+- Project showcase section with links
+- Contact section with working form
+- Smooth scrolling and simple animations
+
+## 🛠️ Built With
+
+- HTML
+- CSS
 - JavaScript
-- Git & GitHub
-- GitHub Pages
+- GitHub Pages (for deployment)
 
-## 🧠 About Me
+## 📂 Folder Structure
 
-I'm Emperor, a passionate and growing web developer focused on building clean, user-friendly websites.
+## 📬 Contact
 
----
+Feel free to reach out:
 
-> © 2025 Emperor. All rights reserved.
+- Email: kelvinriches7@gmail.com
+- LinkedIn: https://linkedin.com/in/emperortechstudio
+
