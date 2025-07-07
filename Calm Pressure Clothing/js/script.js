@@ -29,3 +29,33 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+// Hamburger toggle
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navMenu.classList.toggle('active');
+});
+const overlay = document.getElementById('overlay');
+
+// Toggle overlay when hamburger is clicked
+hamburger.addEventListener('click', () => {
+  overlay.classList.toggle('active');
+});
+
+// Optional: Close menu if overlay is clicked
+overlay.addEventListener('click', () => {
+  hamburger.classList.remove('active');
+  navMenu.classList.remove('active');
+  overlay.classList.remove('active');
+});
+const navLinks = document.querySelectorAll('.nav-link');
+
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navMenu.classList.remove('active');
+    overlay.classList.remove('active');
+  });
+});

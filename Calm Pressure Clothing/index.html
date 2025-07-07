@@ -37,15 +37,19 @@
       <img src="image/logo.png" alt="Calm Pressure Clothing Logo" class="logo" />
       <h1 class="brand-name">Calm Pressure Clothing</h1>
       <nav aria-label="Main Navigation">
-        <ul class="nav-menu">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#works">Works</a></li>
-          <li><a href="#contact">Contact</a></li>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation"><span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span></button>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#works" class="nav-link">Works</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
       </nav>
+
       <form class="search-form" action="#" method="get">
-        <label for="search" class="visually-hidden"></label>
+        <label for="search" class="visually-hidden">search</label>
         <input type="text" id="search" placeholder="Search..." name="search" />
         <button type="submit">Search</button>
       </form>
@@ -471,6 +475,7 @@
   }
 }
 </script>
+  <div class="overlay" id="overlay"></div>
 </body>
 
 </html>
