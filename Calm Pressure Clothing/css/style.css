@@ -446,3 +446,63 @@ hr {
 .footer-contact a:hover {
   text-decoration: underline;
 }
+/* Mobile improvements for Calm Pressure Clothing */
+
+@media (max-width: 768px) {
+  main {
+    margin-top: 120px; /* More top margin to avoid fixed header overlap */
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  nav {
+    justify-content: center;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    align-items: center;
+  }
+
+  .nav-menu li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-menu a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .hero-content {
+    padding: 1rem 10px 2rem 10px;
+  }
+
+  .hero-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .photo-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-auto-rows: 140px;
+    height: auto;
+  }
+
+  .img-square {
+    width: 100% !important;
+    margin-bottom: 15px;
+  }
+}
