@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Emperor Airline</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="./style.css">
+  
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="logo">Emperor<span>✦</span>Airline</a>
+    <ul class="nav-links">
+      <li><a href="#destinations">Destinations</a></li>
+      <li><a href="#classes">Cabins</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#testimonials">Stories</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="toggle" onclick="toggleDark()">
+        <div class="toggle-track">
+          <div class="toggle-thumb"></div>
+        </div>
+        <span class="toggle-label" id="toggle-label">Light</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="stars" id="stars"></div>
+    <div class="plane-fly">✈</div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">Where Elegance Takes Flight</p>
+      <h1>Fly Like an<br><em>Emperor</em></h1>
+      <p>Unrivalled luxury above the clouds. Every flight a ceremony. Every destination a story.</p>
+      <div class="hero-btns">
+        <a href="#destinations" class="btn-primary">Explore Flights</a>
+        <a href="#classes" class="btn-outline">Our Cabins</a>
+      </div>
+    </div>
+
+    <div class="scroll-hint">
+      <div class="scroll-line"></div>
+      Scroll
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <div class="booking-strip">
+    <div class="booking-field">
+      <label>From</label>
+      <input type="text" placeholder="Lagos (LOS)" />
+    </div>
+    <div class="booking-field">
+      <label>To</label>
+      <input type="text" placeholder="Paris (CDG)" />
+    </div>
+    <div class="booking-field">
+      <label>Depart</label>
+      <input type="date" />
+    </div>
+    <div class="booking-field">
+      <label>Return</label>
+      <input type="date" />
+    </div>
+    <div class="booking-field" style="max-width:130px">
+      <label>Cabin</label>
+      <select>
+        <option>Economy</option>
+        <option>Business</option>
+        <option>First Class</option>
+      </select>
+    </div>
+    <button class="btn-search">Search Flights</button>
+  </div>
+
+  <!-- DESTINATIONS -->
+  <section class="destinations" id="destinations">
+    <div class="dest-header reveal">
+      <div>
+        <p class="section-eyebrow">Our Routes</p>
+        <h2 class="section-title">Curated<br>Destinations</h2>
+      </div>
+      <p class="section-sub" style="font-size:0.85rem; max-width:320px;">
+        From the ancient streets of Rome to the glittering towers of Dubai — we carry you to worlds worth discovering.
+      </p>
+    </div>
+    <div class="dest-grid reveal">
+      <div class="dest-card">
+        <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=800&q=80" alt="Paris" />
+        <div class="dest-card-info">
+          <div class="dest-city">Paris</div>
+          <div class="dest-country">France</div>
+          <div class="dest-price">From $1,240</div>
+        </div>
+      </div>
+      <div class="dest-card">
+        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80" alt="Dubai" />
+        <div class="dest-card-info">
+          <div class="dest-city">Dubai</div>
+          <div class="dest-country">UAE</div>
+          <div class="dest-price">From $890</div>
+        </div>
+      </div>
+      <div class="dest-card">
+        <img src="https://images.unsplash.com/photo-1555992336-03a23c7b20ee?w=600&q=80" alt="Tokyo" />
+        <div class="dest-card-info">
+          <div class="dest-city">Tokyo</div>
+          <div class="dest-country">Japan</div>
+          <div class="dest-price">From $1,680</div>
+        </div>
+      </div>
+      <div class="dest-card">
+        <img src="https://images.unsplash.com/photo-1583422409516-2895a77efded?w=600&q=80" alt="Santorini" />
+        <div class="dest-card-info">
+          <div class="dest-city">Santorini</div>
+          <div class="dest-country">Greece</div>
+          <div class="dest-price">From $1,050</div>
+        </div>
+      </div>
+      <div class="dest-card">
+        <img src="https://images.unsplash.com/photo-1493707553966-843dc143b6e0?w=600&q=80" alt="New York" />
+        <div class="dest-card-info">
+          <div class="dest-city">New York</div>
+          <div class="dest-country">USA</div>
+          <div class="dest-price">From $1,320</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLASSES -->
+  <section class="classes" id="classes">
+    <div style="text-align:center; margin-bottom:1rem;" class="reveal">
+      <p class="section-eyebrow">Travel in Style</p>
+      <h2 class="section-title">Choose Your Cabin</h2>
+      <div class="divider" style="margin:1.5rem auto;"></div>
+    </div>
+    <div class="class-grid">
+      <div class="class-card reveal">
+        <div class="class-name">Economy</div>
+        <p class="class-desc">Comfortable, efficient, and perfectly appointed for every journey.</p>
+        <ul class="class-features">
+          <li>Extra legroom seating</li>
+          <li>Complimentary meals</li>
+          <li>Personal entertainment screen</li>
+          <li>USB & power sockets</li>
+        </ul>
+      </div>
+      <div class="class-card featured reveal">
+        <div class="class-badge">Most Popular</div>
+        <div class="class-name">Business</div>
+        <p class="class-desc">Where productivity meets indulgence. Arrive refreshed, inspired.</p>
+        <ul class="class-features">
+          <li>Lie-flat luxury seats</li>
+          <li>Curated fine dining</li>
+          <li>Priority boarding & lounge</li>
+          <li>15-inch HD screen</li>
+          <li>Dedicated cabin crew</li>
+        </ul>
+      </div>
+      <div class="class-card reveal">
+        <div class="class-name">First Class</div>
+        <p class="class-desc">A private suite at 38,000 feet. The pinnacle of airborne luxury.</p>
+        <ul class="class-features">
+          <li>Private enclosed suites</li>
+          <li>Michelin-star cuisine</li>
+          <li>Signature amenity kits</li>
+          <li>Exclusive emperor lounge</li>
+          <li>Chauffeur ground transfer</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="experience" id="experience">
+    <div class="exp-img-wrap reveal">
+      <img class="exp-img-main" src="https://images.unsplash.com/photo-1540339832862-474599807836?w=700&q=80" alt="Luxury cabin interior" />
+      <img class="exp-img-accent" src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=500&q=80" alt="Aircraft exterior" />
+      <div class="exp-stat">
+        <div class="exp-stat-num">94</div>
+        <div class="exp-stat-label">Destinations</div>
+      </div>
+    </div>
+    <div class="reveal">
+      <p class="section-eyebrow">The Emperor Difference</p>
+      <h2 class="section-title">Luxury is in<br>the Details</h2>
+      <div class="divider"></div>
+      <p class="section-sub">
+        From the moment you step into our lounges to the second your wheels touch the runway, every element of your journey has been meticulously orchestrated.
+      </p>
+      <br><br>
+      <p class="section-sub">
+        Our fleet of next-generation aircraft, our award-winning cuisine, and our crew — trained to anticipate your every need — make Emperor Airline not just a carrier, but an experience.
+      </p>
+      <br><br>
+      <a href="#" class="btn-primary" style="background:var(--accent); color:#fff; display:inline-block;">Discover More</a>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <div class="reveal">
+      <p class="section-eyebrow">Passenger Stories</p>
+      <h2 class="section-title">Voices from<br>the Sky</h2>
+    </div>
+    <div class="test-grid">
+      <div class="test-card reveal">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-quote">"The First Class suite felt like a five-star hotel room. I arrived in London feeling completely rested and utterly pampered."</p>
+        <div class="test-author">Adaeze Okonkwo</div>
+        <div class="test-route">Lagos → London</div>
+      </div>
+      <div class="test-card reveal">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-quote">"Emperor's Business cabin is simply unmatched. The food, the crew, the attention to detail — I fly with no one else now."</p>
+        <div class="test-author">James Whitmore</div>
+        <div class="test-route">New York → Dubai</div>
+      </div>
+      <div class="test-card reveal">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-quote">"Every time I board, I feel like royalty. The lounge in Paris is extraordinary — I actually arrived early just to enjoy it."</p>
+        <div class="test-author">Yuki Tanaka</div>
+        <div class="test-route">Tokyo → Paris</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo">Emperor<span style="color:#c0392b">✦</span>Airline</a>
+        <p>Elevating travel to an art form since 1998. Flying the world's most discerning passengers to over 94 destinations.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Fly</h4>
+        <ul>
+          <li><a href="#">Book a Flight</a></li>
+          <li><a href="#">Manage Booking</a></li>
+          <li><a href="#">Check In Online</a></li>
+          <li><a href="#">Flight Status</a></li>
+          <li><a href="#">Baggage Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Experience</h4>
+        <ul>
+          <li><a href="#">First Class</a></li>
+          <li><a href="#">Business Class</a></li>
+          <li><a href="#">Emperor Lounges</a></li>
+          <li><a href="#">Dining</a></li>
+          <li><a href="#">Rewards Program</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About Emperor</a></li>
+          <li><a href="#">Our Fleet</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press Room</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Emperor Airline. All rights reserved.</span>
+      <div style="display:flex; gap:1.5rem;">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>

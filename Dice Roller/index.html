@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dice Roller</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  
+</head>
+
+<body>
+
+  <div class="page">
+
+    <!-- Header -->
+    <div class="header">
+      <a href="../index.html" class="back-btn">← Back to Portfolio</a>
+      <p class="header-tag">JavaScript Project</p>
+    </div>
+
+    <!-- Main Card -->
+    <div class="card">
+
+      <!-- Title -->
+      <h1>Dice Roller</h1>
+      <p class="subtitle">Click the button  to roll the dice</p>
+
+      <!-- Dice Display -->
+      <div class="dice-wrap">
+        <img src="./image/dice1.png" alt="Dice showing 1" id="diceImage" class="dice-img" />
+      </div>
+
+      <!-- Roll Number Display -->
+      <div class="result-row">
+        <p class="result-label">You rolled</p>
+        <p class="result-number" id="resultNumber">1</p>
+      </div>
+
+      <!-- Roll Button -->
+      <button class="roll-btn" id="rollBtn">Roll Dice 🎲</button>
+
+      <!-- Roll Count -->
+      <p class="roll-count" id="rollCount">Total rolls: 0</p>
+
+      <!-- Roll History -->
+      <div class="history-section">
+        <p class="history-label">Last 6 Rolls</p>
+        <div class="history-row" id="historyRow">
+          <!-- Added by JavaScript -->
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <p class="footer-note">Built with HTML, CSS & JavaScript &mdash; EmperorTech_Studio</p>
+
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>

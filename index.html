@@ -1,613 +1,589 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Emperor - Frontend Web Developer. Building clean, responsive websites with HTML, CSS and JavaScript."
-    />
-    <title>Emperor | Web Developer</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet"
-href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  </head>
 
-  <body>
-    <!-- NAVBAR -->
-    <nav class="navbar" id="navbar">
-      <div class="nav-inner">
-        <a href="#home" class="nav-logo">Emperor Tech-Studio<span>.</span></a>
-        <ul class="nav-links" id="navLinks">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- HERO SECTION -->
-    <section class="hero" id="home">
-      <div class="hero-inner">
-        <div class="hero-text">
-          <p class="hero-greeting">Hi there, I'm</p>
-          <h1 class="hero-name">Emperor</h1>
-          <h2 class="hero-role">Frontend Web Developer</h2>
-          <p class="hero-desc">
-            Hi, I'm Emperor, a passionate and dedicated beginner in the world of
-            web development and founder of EmperorTech_Studio (E_TECH). I have a
-            keen interest in technology and a strong desire to learn and grow in
-            this field. I am currently focused on mastering HTML, CSS, and
-            JavaScript to build dynamic and interactive websites. My goal is to
-            create user-friendly and visually appealing websites that provide a
-            seamless experience for users. I am always eager to take on new
-            challenges and expand my skill set. I’m ready to take on new
-            challenges and contribute in meaningful ways.
+  <!-- SEO Meta Description -->
+  <meta name="description" content="Emperor - Frontend Web Developer. Building clean, responsive websites with HTML, CSS and JavaScript." />
 
-            <i>EmperorTech_Studio turning ideas into reality.</i>
-          </p>
-          <div class="hero-btns">
-            <a href="#projects" class="btn btn-primary">View My Work</a>
-            <a href="#contact" class="btn btn-outline">Hire Me</a>
-          </div>
-          <div class="hero-social">
-            <a
-              href="https://github.com/E-Tech070"
-              target="_blank"
-              aria-label="GitHub"
-            >
-              <i class="bi bi-github"></i>
-            </a>
-            <a
-              href="https://linkedin.com/in/emperortechstudio"
-              target="_blank"
-              aria-label="LinkedIn"
-            >
-             <i class="bi bi-linkedin"></i>
-            </a>
-            <a href="mailto:kelvinriches7@gmail.com" aria-label="Email">
-              <i class="bi bi-envelope"></i>
-            </a>
-          </div>
-        </div>
-        <div class="hero-visual">
-          <div class="hero-card">
-            <div class="hero-avatar">
-              <img
-                src="./images/profile_pic.jpg"
-                alt="Emperor - Web Developer"
-              />
-            </div>
-            <div class="hero-card-info">
-              <span class="available-dot"></span>
-              <span>Available for work</span>
-            </div>
-            <div class="hero-card-stats">
-              <div class="stat-item">
-                <strong>1+</strong>
-                <span>Year Coding</span>
-              </div>
-              <div class="stat-divider"></div>
-              <div class="stat-item">
-                <strong>5+</strong>
-                <span>Projects Done</span>
-              </div>
-              <div class="stat-divider"></div>
-              <div class="stat-item">
-                <strong>3+</strong>
-                <span>Happy Clients</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+  <!-- Open Graph tags  -->
+  <meta property="og:title" content="Emperor | Frontend Web Developer" />
+  <meta property="og:description" content="I build clean, responsive websites using HTML, CSS and JavaScript. Founder of EmperorTech_Studio." />
+  <meta property="og:image" content="./images/profile_pic.jpg" />
+  <meta property="og:url" content="https://e-tech070.github.io/Emperor-Portfolio/" />
+  <meta property="og:type" content="website" />
 
-    <!-- ABOUT SECTION -->
-    <section class="about" id="about">
-      <div class="about-inner">
-        <div class="section-tag">Who I Am</div>
-        <h2 class="section-title">About Me</h2>
-        <div class="about-content">
-          <div class="about-text">
-            <p>
-              Hi, I'm Emperor — a passionate and dedicated frontend web
-              developer based in Nigeria. I have been learning and building
-              websites for over a year now, and I genuinely love every part of
-              it.
-            </p>
-            <p>
-              I started my journey from scratch, teaching myself HTML and CSS,
-              then moved on to JavaScript. Every project I build pushes me to
-              learn something new and improve my craft. I believe the best
-              developers never stop learning.
-            </p>
-            <p>
-              Beyond coding, I am the founder of
-              <strong>EmperorTech_Studio (E_TECH)</strong> — where I turn ideas
-              into reality by building clean, modern and responsive websites for
-              individuals and businesses.
-            </p>
-            <div class="about-list">
-              <div class="about-item">
-                <span class="about-check">✓</span>
-                <span>Clean, readable code</span>
-              </div>
-              <div class="about-item">
-                <span class="about-check">✓</span>
-                <span>Mobile-first responsive design</span>
-              </div>
-              <div class="about-item">
-                <span class="about-check">✓</span>
-                <span>Fast delivery and communication</span>
-              </div>
-              <div class="about-item">
-                <span class="about-check">✓</span>
-                <span>Always learning and improving</span>
-              </div>
-            </div>
-            <a href="#contact" class="btn btn-primary">Let's Work Together</a>
-          </div>
-          <div class="about-details">
-            <div class="detail-card">
-              <h4>Personal Info</h4>
-              <ul>
-                <li><span>Name</span><strong>Emperor</strong></li>
-                <li><span>Age</span><strong>27</strong></li>
-                <li><span>Studio</span><strong>EmperorTech_Studio</strong></li>
-                <li><span>Location</span><strong>Nigeria</strong></li>
-                <li>
-                  <span>Email</span><strong>kelvinriches7@gmail.com</strong>
-                </li>
-                <li>
-                  <span>Available</span
-                  ><strong class="available">Yes, for hire</strong>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+  <!-- Favicon  -->
+  <link rel="icon" href="./images/favicon.ico" type="image/x-icon" />
 
-    <!-- SKILLS SECTION -->
-    <section class="skills" id="skills">
-      <div class="skills-inner">
-        <div class="section-tag">What I Know</div>
-        <h2 class="section-title">My Skills</h2>
-        <p class="section-subtitle">
-          These are the technologies and tools I work with on a regular basis.
+  <title>Emperor | Web Developer</title>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo">Emperor Tech-Studio<span>.</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <p class="hero-greeting">Hi there, I'm</p>
+        <h1 class="hero-name">Emperor</h1>
+        <h2 class="hero-role">Frontend Web Developer</h2>
+
+        
+        <p class="hero-desc">
+          I build clean, responsive and user-friendly websites using HTML, CSS and JavaScript.
+          Founder of <em>EmperorTech_Studio</em> — turning ideas into reality, one website at a time.
         </p>
 
-        <div class="skills-grid">
-          <div class="skill-card">
-            <div class="skill-icon html-icon">
-           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgb(230, 9, 52)" d="M128 96L162.9 491.8L319.5 544L477.1 491.8L512 96L128 96zM436.2 223.9L252.4 223.9L256.5 273.3L432.1 273.3L418.5 421.7L320.6 448.7L320.6 449L319.5 449L220.8 421.7L214.8 345.9L262.5 345.9L266 384L319.5 398.5L373.2 384L379.2 321.8L212.3 321.8L199.5 176.2L440.6 176.2L436.2 223.9z"/></svg>
-            </div>
-            <h3>HTML5</h3>
-            <p>
-              Building the structure of web pages with clean, semantic HTML. I
-              understand how to structure content properly for both users and
-              search engines.
-            </p>
-            <div class="skill-bar">
-              <div class="skill-fill" style="width: 85%">
-                <span>85%</span>
-              </div>
-            </div>
-          </div>
+        <div class="hero-btns">
+          <a href="#projects" class="btn btn-primary">View My Work</a>
+          <a href="#contact" class="btn btn-outline">Hire Me</a>
+          <!-- Download CV button -->
+          <a href="./cv/Emperor-CV.pdf" download class="btn btn-cv">Download CV</a>
+        </div>
 
-          <div class="skill-card">
-            <div class="skill-icon css-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgb(9, 39, 230)" d="M128 96L162.9 491.8L320 544L477.1 491.8L512 96L128 96zM441.1 176L436.3 223.3L321 272.6L320.7 272.7L432.2 272.7L419.4 419.3L321.2 448L222.4 418.8L216 344.9L264.9 344.9L268.1 383.2L320.7 396.5L375.4 381.1L379.1 319.5L212.8 319L212.8 318.9L212.6 319L209 272.7L321.1 226L327.6 223.3L204.7 223.3L198.9 176L441.1 176z"/></svg>
-            </div>
-            <h3>CSS3</h3>
-            <p>
-              Styling web pages with modern CSS including Flexbox, Grid,
-              animations and responsive design. I can make websites look great
-              on all screen sizes.
-            </p>
-            <div class="skill-bar">
-              <div class="skill-fill" style="width: 75%">
-                <span>75%</span>
-              </div>
-            </div>
-          </div>
+        <!-- Social links - with rel="noopener" for security -->
+        <div class="hero-social">
+          <a href="https://github.com/E-Tech070" target="_blank" rel="noopener" aria-label="GitHub">
+            <i class="bi bi-github"></i>
+          </a>
+          <a href="https://linkedin.com/in/emperortechstudio" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <i class="bi bi-linkedin"></i>
+          </a>
+          <a href="mailto:kelvinriches7@gmail.com" aria-label="Email">
+            <i class="bi bi-envelope"></i>
+          </a>
+          <a href="https://wa.me/2348107796481" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <i class="bi bi-whatsapp"></i>
+          </a>
+        </div>
+      </div>
 
-          <div class="skill-card">
-            <div class="skill-icon js-icon">
-             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgb(255, 212, 59)" d="M96 96L96 544L544 544L544 96L96 96zM339.8 445.4C339.8 489 314.2 508.9 276.9 508.9C243.2 508.9 223.7 491.5 213.7 470.4L248 449.7C254.6 461.4 260.6 471.3 275.1 471.3C288.9 471.3 297.7 465.9 297.7 444.8L297.7 301.7L339.8 301.7L339.8 445.4zM439.4 508.9C400.3 508.9 375 490.3 362.7 465.9L397 446.1C406 460.8 417.8 471.7 438.5 471.7C455.9 471.7 467.1 463 467.1 450.9C467.1 436.5 455.7 431.4 436.4 422.9L425.9 418.4C395.5 405.5 375.4 389.2 375.4 354.9C375.4 323.3 399.5 299.3 437 299.3C463.8 299.3 483 308.6 496.8 333L464 354C456.8 341.1 449 336 436.9 336C424.6 336 416.8 343.8 416.8 354C416.8 366.6 424.6 371.7 442.7 379.6L453.2 384.1C489 399.4 509.1 415.1 509.1 450.3C509.1 488.1 479.3 508.9 439.4 508.9z"/></svg>
-            </div>
-            <h3>JavaScript</h3>
-            <p>
-              Adding interactivity and functionality to websites. I am currently
-              learning and building with vanilla JavaScript to make web pages
-              come alive.
-            </p>
-            <div class="skill-bar">
-              <div class="skill-fill" style="width: 50%">
-                <span>50%</span>
-              </div>
-            </div>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="hero-avatar">
+            <img src="./images/profile_pic.jpg" alt="Emperor - Web Developer" />
           </div>
-
-          <div class="skill-card">
-            <div class="skill-icon ms-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgb(9, 39, 230)" d="M96 96L310.6 96L310.6 310.6L96 310.6L96 96zM329.4 96L544 96L544 310.6L329.4 310.6L329.4 96zM96 329.4L310.6 329.4L310.6 544L96 544L96 329.4zM329.4 329.4L544 329.4L544 544L329.4 544L329.4 329.4z"/></svg>
-            </div>
-            <h3>Microsoft 365</h3>
-            <p>
-              Proficient in Microsoft Word, Excel, PowerPoint and Outlook. I can
-              create professional documents, spreadsheets and presentations with
-              ease.
-            </p>
-            <div class="skill-bar">
-              <div class="skill-fill ms-fill" style="width: 90%">
-                <span>90%</span>
-              </div>
-            </div>
+          <div class="hero-card-info">
+            <span class="available-dot"></span>
+            <span>Available for work</span>
           </div>
-
-          <div class="skill-card skill-card--extra">
-            <div class="skill-icon git-icon">
-             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgb(230, 28, 9)" d="M535.6 300.1L340 104.5C334.6 99 327.2 96 319.6 96C312 96 304.6 99 299.2 104.4L258.5 145L310 196.5C337.1 187.4 362.7 213.3 353.4 240.2L403.1 289.9C437.3 278.1 464.3 320.9 438.6 346.6C412.1 373.1 368.4 343.7 382.6 309.3L336.3 263L336.3 384.9C361.6 397.4 358.6 426.7 345.4 439.9C339 446.3 330.2 450 321.1 450C312 450 303.3 446.4 296.8 439.9C279.2 422.3 285.7 393 308 383.9L308 260.9C287.2 252.4 283.4 230.2 289.4 215.9L238.6 165L104.5 299.1C99 304.6 96 311.9 96 319.5C96 327.1 99 334.5 104.5 339.9L300.1 535.6C305.5 541 312.8 544 320.5 544C328.2 544 335.5 541 340.9 535.6L535.6 340.9C541 335.5 544 328.1 544 320.5C544 312.9 541 305.5 535.6 300.1z"/></svg>
+          <div class="hero-card-stats">
+            <div class="stat-item">
+              <strong>1+</strong>
+              <span>Year Coding</span>
             </div>
-            <h3>Git & GitHub</h3>
-            <p>
-              Version control with Git and hosting projects on GitHub. I use
-              GitHub to save, track and share all my work and keep it backed up
-              safely.
-            </p>
-            <div class="skill-bar">
-              <div class="skill-fill git-fill" style="width: 60%">
-                <span>60%</span>
-              </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <strong>5+</strong>
+              <span>Projects Done</span>
             </div>
-          </div>
-
-          <div class="skill-card skill-card--learning">
-            <div class="skill-icon learn-icon">
-              <span style="font-size: 36px">🚀</span>
-            </div>
-            <h3>Currently Learning</h3>
-            <p>
-              I am actively learning more JavaScript, exploring React.js and
-              improving my CSS animations and layout skills every single day.
-            </p>
-            <div class="learning-tags">
-              <span>JavaScript (Advanced)</span>
-              <span>React.js</span>
-              <span>CSS Animations</span>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <strong>3+</strong>
+              <span>Happy Clients</span>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- PROJECTS SECTION -->
-    <section class="projects" id="projects">
-      <div class="projects-inner">
-        <div class="section-tag">What I've Built</div>
-        <h2 class="section-title">My Projects</h2>
-        <p class="section-subtitle">
-          Here are some of the websites I have built. Each one taught me
-          something new.
-        </p>
-
-        <div class="projects-grid">
-          <div class="project-card project-card--featured">
-            <div class="project-img">
-              <img
-                src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=700&q=80"
-                alt="Calm Pressure Clothing Website"
-                loading="lazy"
-              />
-              <div class="project-overlay">
-                <a
-                  href="Calm Pressure Clothing/index.html"
-                  target="_blank"
-                  class="project-link-btn"
-                  >View Live</a
-                >
-                <a
-                  href="https://github.com/E-Tech070"
-                  target="_blank"
-                  class="project-link-btn project-link-btn--outline"
-                  >Source Code</a
-                >
-              </div>
+  <!-- ABOUT SECTION -->
+  <section class="about" id="about">
+    <div class="about-inner">
+      <div class="section-tag">Who I Am</div>
+      <h2 class="section-title">About Me</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>Hi, I'm Emperor — a passionate and dedicated frontend web developer based in Nigeria. I have been learning and building websites for over a year now, and I genuinely love every part of it.</p>
+          <p>I started my journey from scratch, teaching myself HTML and CSS, then moved on to JavaScript. Every project I build pushes me to learn something new and improve my craft. I believe the best developers never stop learning.</p>
+          <p>Beyond coding, I am the founder of <strong>EmperorTech_Studio (E_TECH)</strong> — where I turn ideas into reality by building clean, modern and responsive websites for individuals and businesses.</p>
+          <div class="about-list">
+            <div class="about-item">
+              <span class="about-check">✓</span>
+              <span>Clean, readable code</span>
             </div>
-            <div class="project-info">
-              <div class="project-tags">
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>JavaScript</span>
-              </div>
-              <h3>Calm Pressure Clothing</h3>
-              <p>
-                A stylish and responsive website for a premium tailoring brand.
-                Features a masonry photo gallery, lightbox images and a
-                mobile-friendly navigation. Built with pure HTML, CSS and
-                JavaScript.
-              </p>
-              <div class="project-links">
-                <a href="Calm Pressure Clothing/index.html" target="_blank"
-                  >View Project →</a
-                >
-                <a href="https://github.com/E-Tech070" target="_blank"
-                  >GitHub →</a
-                >
-              </div>
+            <div class="about-item">
+              <span class="about-check">✓</span>
+              <span>Mobile-first responsive design</span>
+            </div>
+            <div class="about-item">
+              <span class="about-check">✓</span>
+              <span>Fast delivery and communication</span>
+            </div>
+            <div class="about-item">
+              <span class="about-check">✓</span>
+              <span>Always learning and improving</span>
             </div>
           </div>
-
-          <div class="project-card">
-            <div class="project-img">
-              <img
-                src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=500&q=80"
-                alt="Janelle Luxury Hairs"
-                loading="lazy"
-              />
-              <div class="project-overlay">
-                <a
-                  href="Janelle-Luxury-Hairs/index.html"
-                  target="_blank"
-                  class="project-link-btn"
-                  >View Live</a
-                >
-                <a
-                  href="https://github.com/E-Tech070"
-                  target="_blank"
-                  class="project-link-btn project-link-btn--outline"
-                  >Source Code</a
-                >
-              </div>
-            </div>
-            <div class="project-info">
-              <div class="project-tags">
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>JavaScript</span>
-              </div>
-              <h3>Janelle Luxury Hairs</h3>
-              <p>
-                A full e-commerce style website for a luxury hair brand.
-                Includes a shop section with product filters, a blog, services
-                page and WhatsApp ordering system.
-              </p>
-              <div class="project-links">
-                <a href="Janelle-Luxury-Hairs/index.html" target="_blank"
-                  >View Project →</a
-                >
-                <a href="https://github.com/E-Tech070" target="_blank"
-                  >GitHub →</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-img">
-              <img
-                src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=500&q=80"
-                alt="GlowNest Skincare"
-                loading="lazy"
-              />
-              <div class="project-overlay">
-                <a
-                  href="Glownest skincare/index.html"
-                  target="_blank"
-                  class="project-link-btn"
-                  >View Live</a
-                >
-                <a
-                  href="https://github.com/E-Tech070"
-                  target="_blank"
-                  class="project-link-btn project-link-btn--outline"
-                  >Source Code</a
-                >
-              </div>
-            </div>
-            <div class="project-info">
-              <div class="project-tags">
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>JavaScript</span>
-              </div>
-              <h3>GlowNest Skincare</h3>
-              <p>
-                A clean, feminine and responsive skincare landing page. Features
-                a hero section, product cards, testimonials and a contact form
-                with form validation.
-              </p>
-              <div class="project-links">
-                <a href="Glownest skincare/index.html" target="_blank"
-                  >View Project →</a
-                >
-                <a href="https://github.com/E-Tech070" target="_blank"
-                  >GitHub →</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <!-- Coming soon card -->
-          <div class="project-card project-card--soon">
-            <div class="project-soon-inner">
-              <span class="soon-icon">⚡</span>
-              <h3>More Coming Soon</h3>
-              <p>
-                I am always building new projects and improving my skills.
-                Follow my GitHub to stay updated on what I am working on next.
-              </p>
-              <a
-                href="https://github.com/E-Tech070"
-                target="_blank"
-                class="btn btn-outline"
-                >Follow on GitHub</a
-              >
-            </div>
+          <a href="#contact" class="btn btn-primary">Let's Work Together</a>
+        </div>
+        <div class="about-details">
+          <div class="detail-card">
+            <h4>Personal Info</h4>
+            <ul>
+              <li><span>Name</span><strong>Emperor</strong></li>
+              <li><span>Age</span><strong>27</strong></li>
+              <li><span>Studio</span><strong>EmperorTech_Studio</strong></li>
+              <li><span>Location</span><strong>Nigeria</strong></li>
+              <li><span>Email</span><strong>kelvinriches7@gmail.com</strong></li>
+              <li><span>Available</span><strong class="available">Yes, for hire</strong></li>
+            </ul>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- CONTACT SECTION -->
-    <section class="contact" id="contact">
-      <div class="contact-inner">
-        <div class="section-tag">Get In Touch</div>
-        <h2 class="section-title">Let's Work Together</h2>
-        <p class="section-subtitle">
-          Have a project in mind? Want to hire me? Or just want to say hello? I
-          would love to hear from you.
-        </p>
+  <!-- SKILLS SECTION -->
+  <section class="skills" id="skills">
+    <div class="skills-inner">
+      <div class="section-tag">What I Know</div>
+      <h2 class="section-title">My Skills</h2>
+      <p class="section-subtitle">These are the technologies and tools I work with on a regular basis.</p>
 
-        <div class="contact-content">
-          <div class="contact-cards">
-            <div class="contact-card">
-              <a href="mailto:kelvinriches7@gmail.com" aria-label="Email">
-                <i class="bi bi-envelope"></i>
+      <div class="skills-grid">
 
-              </a>
-              <h4>Email Me</h4>
-              <p>For project inquiries and work opportunities</p>
-              <a href="mailto:kelvinriches7@gmail.com"
-                >kelvinriches7@gmail.com</a
-              >
-            </div>
-
-            <div class="contact-card">
-              <a
-                href="https://linkedin.com/in/emperortechstudio"
-                target="_blank"
-                aria-label="LinkedIn"
-              >
-                <i class="bi bi-linkedin"></i>
-              </a>
-              <h4>LinkedIn</h4>
-              <p>Connect with me professionally</p>
-              <a
-                href="https://linkedin.com/in/emperortechstudio"
-                target="_blank"
-                >emperortechstudio</a
-              >
-            </div>
-
-            <div class="contact-card">
-              <a
-                href="https://github.com/E-Tech070"
-                target="_blank"
-                aria-label="GitHub"
-              >
-                <i class="bi bi-github"></i>
-              </a>
-              <h4>GitHub</h4>
-              <p>Check out my code and projects</p>
-              <a href="https://github.com/E-Tech070" target="_blank"
-                >E-Tech070</a
-              >
+        <div class="skill-card">
+          <div class="skill-icon html-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgb(230, 28, 9)" d="M128 96L162.9 491.8L319.5 544L477.1 491.8L512 96L128 96zM436.2 223.9L252.4 223.9L256.5 273.3L432.1 273.3L418.5 421.7L320.6 448.7L320.6 449L319.5 449L220.8 421.7L214.8 345.9L262.5 345.9L266 384L319.5 398.5L373.2 384L379.2 321.8L212.3 321.8L199.5 176.2L440.6 176.2L436.2 223.9z"/></svg></div>
+          <h3>HTML5</h3>
+          <p>Building the structure of web pages with clean, semantic HTML. I understand how to structure content properly for both users and search engines.</p>
+          <!-- Replaced percentage with word label -->
+          <div class="skill-bar">
+            <div class="skill-fill skill-fill--advanced">
+              <span>Advanced</span>
             </div>
           </div>
-
-          <form class="contact-form" id="contactForm">
-            <h3>Send Me a Message</h3>
-            <div class="form-group">
-              <label for="name">Your Name</label>
-              <input
-                type="text"
-                id="name"
-                placeholder="Your full name"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input
-                type="email"
-                id="email"
-                placeholder="your@email.com"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label for="subject">Subject</label>
-              <input
-                type="text"
-                id="subject"
-                placeholder="What is this about?"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea
-                id="message"
-                rows="5"
-                placeholder="Tell me about your project..."
-                required
-              ></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary btn-full">
-              Send Message
-            </button>
-          </form>
         </div>
+
+        <div class="skill-card">
+          <div class="skill-icon css-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgb(54, 9, 230)" d="M128 96L162.9 491.8L320 544L477.1 491.8L512 96L128 96zM441.1 176L436.3 223.3L321 272.6L320.7 272.7L432.2 272.7L419.4 419.3L321.2 448L222.4 418.8L216 344.9L264.9 344.9L268.1 383.2L320.7 396.5L375.4 381.1L379.1 319.5L212.8 319L212.8 318.9L212.6 319L209 272.7L321.1 226L327.6 223.3L204.7 223.3L198.9 176L441.1 176z"/></svg></div>
+          <h3>CSS3</h3>
+          <p>Styling web pages with modern CSS including Flexbox, Grid, animations and responsive design. I can make websites look great on all screen sizes.</p>
+          <div class="skill-bar">
+            <div class="skill-fill skill-fill--good">
+              <span>Good</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon js-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgb(255, 212, 59)" d="M544 160C544 124.7 515.3 96 480 96L160 96C124.7 96 96 124.7 96 160L96 480C96 515.3 124.7 544 160 544L480 544C515.3 544 544 515.3 544 480L544 160zM276.9 508.9C243.2 508.9 223.7 491.5 213.7 470.4L248 449.7C254.6 461.4 260.6 471.3 275.1 471.3C288.9 471.3 297.7 465.9 297.7 444.8L297.7 301.7L339.8 301.7L339.8 445.4C339.8 489 314.2 508.9 276.9 508.9zM362.7 465.9L397 446.1C406 460.8 417.8 471.7 438.5 471.7C455.9 471.7 467.1 463 467.1 450.9C467.1 436.5 455.7 431.4 436.4 422.9L425.9 418.4C395.5 405.5 375.4 389.2 375.4 354.9C375.4 323.3 399.5 299.3 437 299.3C463.8 299.3 483 308.6 496.8 333L464 354C456.8 341.1 449 336 436.9 336C424.6 336 416.8 343.8 416.8 354C416.8 366.6 424.6 371.7 442.7 379.6L453.2 384.1C489 399.4 509.1 415.1 509.1 450.3C509.1 488.1 479.3 508.9 439.4 508.9C400.3 508.9 375 490.3 362.7 465.9z"/></svg></i></div>
+          <h3>JavaScript</h3>
+          <p>Adding interactivity and functionality to websites. I am currently learning and building with vanilla JavaScript to make web pages come alive.</p>
+          <div class="skill-bar">
+            <div class="skill-fill skill-fill--beginner">
+              <span>Beginner</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon ms-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgb(59, 78, 255)" d="M96 96L310.6 96L310.6 310.6L96 310.6L96 96zM329.4 96L544 96L544 310.6L329.4 310.6L329.4 96zM96 329.4L310.6 329.4L310.6 544L96 544L96 329.4zM329.4 329.4L544 329.4L544 544L329.4 544L329.4 329.4z"/></svg></div>
+          <h3>Microsoft 365</h3>
+          <p>Proficient in Microsoft Word, Excel, PowerPoint and Outlook. I can create professional documents, spreadsheets and presentations with ease.</p>
+          <div class="skill-bar">
+            <div class="skill-fill skill-fill--expert">
+              <span>Expert</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon git-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgb(230, 28, 9)" d="M544 160C544 124.7 515.3 96 480 96L160 96C124.7 96 96 124.7 96 160L96 480C96 515.3 124.7 544 160 544L480 544C515.3 544 544 515.3 544 480L544 160zM361.8 471.7C361.8 469.9 361.8 465.7 361.9 460.1C362 448.7 362 431.3 362 416.4C362 400.8 356.8 390.9 350.7 385.7C387.7 381.6 426.7 376.5 426.7 312.6C426.7 294.4 420.2 285.3 409.6 273.6C411.3 269.3 417 251.6 407.9 228.6C394 224.3 362.2 246.5 362.2 246.5C335.6 239 305.6 239 279 246.5C279 246.5 247.2 224.3 233.3 228.6C224.2 251.5 229.8 269.2 231.6 273.6C221 285.3 216 294.4 216 312.6C216 376.2 253.3 381.6 290.3 385.7C285.5 390 281.2 397.4 279.7 408C270.2 412.3 245.9 419.7 231.4 394.1C222.3 378.3 205.9 377 205.9 377C189.7 376.8 204.8 387.2 204.8 387.2C215.6 392.2 223.2 411.4 223.2 411.4C232.9 441.1 279.3 431.1 279.3 431.1C279.3 440.1 279.4 452.8 279.4 461.7C279.4 466.5 279.5 470.3 279.5 471.7C279.5 476 276.5 481.2 268 479.7C202 457.6 155.8 394.8 155.8 321.4C155.8 229.6 226 159.9 317.8 159.9C409.6 159.9 484 229.6 484 321.4C484.1 394.8 439.3 457.7 373.3 479.7C364.9 481.2 361.8 476 361.8 471.7zM271.3 416.9C271.1 415.4 272.4 414.1 274.3 413.7C276.2 413.5 278 414.3 278.2 415.6C278.5 416.9 277.2 418.2 275.2 418.6C273.3 419 271.5 418.2 271.3 416.9zM262.2 420.1C260 420.3 258.5 419.2 258.5 417.7C258.5 416.4 260 415.3 262 415.3C263.9 415.1 265.7 416.2 265.7 417.7C265.7 419 264.2 420.1 262.2 420.1zM247.9 417.9C246 417.5 244.7 416 245.1 414.7C245.5 413.4 247.5 412.8 249.2 413.2C251.2 413.8 252.5 415.3 252 416.6C251.6 417.9 249.6 418.5 247.9 417.9zM235.4 410.6C233.9 409.3 233.5 407.4 234.5 406.5C235.4 405.4 237.3 405.6 238.8 407.1C240.1 408.4 240.6 410.4 239.7 411.2C238.8 412.3 236.9 412.1 235.4 410.6zM226.9 400.6C225.8 399.1 225.8 397.4 226.9 396.7C228 395.8 229.7 396.5 230.6 398C231.7 399.5 231.7 401.3 230.6 402.1C229.7 402.7 228 402.1 226.9 400.6zM220.6 391.8C219.5 390.5 219.3 389 220.2 388.3C221.1 387.4 222.6 387.9 223.7 388.9C224.8 390.2 225 391.7 224.1 392.4C223.2 393.3 221.7 392.8 220.6 391.8zM214.6 385.4C213.3 384.8 212.7 383.7 213.1 382.8C213.5 382.2 214.6 381.9 215.9 382.4C217.2 383.1 217.8 384.2 217.4 385C217 385.9 215.7 386.1 214.6 385.4z"/></svg></div>
+          <h3>Git & GitHub</h3>
+          <p>Version control with Git and hosting projects on GitHub. I use GitHub to save, track and share all my work and keep it backed up safely.</p>
+          <div class="skill-bar">
+            <div class="skill-fill skill-fill--intermediate">
+              <span>Intermediate</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-card skill-card--learning">
+          <div class="skill-icon learn-icon">🚀</div>
+          <h3>Currently Learning</h3>
+          <p>I am actively learning more JavaScript, exploring React.js and improving my CSS animations and layout skills every single day.</p>
+          <div class="learning-tags">
+            <span>JavaScript (Advanced)</span>
+            <span>React.js</span>
+            <span>CSS Animations</span>
+          </div>
+        </div>
+
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-      <div class="footer-inner">
-        <div class="footer-left">
-          <a href="#home" class="footer-logo">Emperor<span>.</span></a>
-          <p>
-            Frontend Web Developer & Founder of EmperorTech_Studio. Building the
-            web one project at a time.
-          </p>
+  <!-- PROJECTS SECTION -->
+  <section class="projects" id="projects">
+    <div class="projects-inner">
+      <div class="section-tag">What I've Built</div>
+      <h2 class="section-title">My Projects</h2>
+      <p class="section-subtitle">Here are some of the websites I have built. Each one taught me something new.</p>
+
+      <div class="projects-grid">
+
+        <div class="project-card project-card--featured">
+          <div class="project-img">
+            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=700&q=80" alt="Calm Pressure Clothing Website" loading="lazy" />
+            <div class="project-overlay">
+              <a href="Calm Pressure Clothing/index.html" target="_blank" rel="noopener" class="project-link-btn">View Live</a>
+              <a href="https://github.com/E-Tech070" target="_blank" rel="noopener" class="project-link-btn project-link-btn--outline">Source Code</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+            <h3>Calm Pressure Clothing</h3>
+            <p>A stylish and responsive website for a premium tailoring brand. Features a masonry photo gallery, lightbox images and a mobile-friendly navigation. Built with pure HTML, CSS and JavaScript.</p>
+            <div class="project-links">
+              <a href="Calm Pressure Clothing/index.html" target="_blank" rel="noopener">View Project →</a>
+              <a href="https://github.com/E-Tech070" target="_blank" rel="noopener">GitHub →</a>
+            </div>
+          </div>
         </div>
-        <div class="footer-links">
-          <h4>Quick Links</h4>
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
+
+        <div class="project-card">
+          <div class="project-img">
+            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=500&q=80" alt="Janelle Luxury Hairs" loading="lazy" />
+            <div class="project-overlay">
+              <a href="Janelle-Luxury-Hairs/index.html" target="_blank" rel="noopener" class="project-link-btn">View Live</a>
+              <a href="https://github.com/E-Tech070" target="_blank" rel="noopener" class="project-link-btn project-link-btn--outline">Source Code</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+            <h3>Janelle Luxury Hairs</h3>
+            <p>A full e-commerce style website for a luxury hair brand. Includes a shop section with product filters, a blog, services page and WhatsApp ordering system.</p>
+            <div class="project-links">
+              <a href="Janelle-Luxury-Hairs/index.html" target="_blank" rel="noopener">View Project →</a>
+              <a href="https://github.com/E-Tech070" target="_blank" rel="noopener">GitHub →</a>
+            </div>
+          </div>
         </div>
-        <div class="footer-social">
-          <h4>Find Me Online</h4>
-          <a href="https://github.com/E-Tech070" target="_blank">GitHub</a>
-          <a href="https://linkedin.com/in/emperortechstudio" target="_blank"
-            >LinkedIn</a
-          >
-          <a href="mailto:kelvinriches7@gmail.com">Email</a>
+
+        <div class="project-card">
+          <div class="project-img">
+            <img src="https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=500&q=80" alt="GlowNest Skincare" loading="lazy" />
+            <div class="project-overlay">
+              <a href="Glownest skincare/index.html" target="_blank" rel="noopener" class="project-link-btn">View Live</a>
+              <a href="https://github.com/E-Tech070" target="_blank" rel="noopener" class="project-link-btn project-link-btn--outline">Source Code</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+            <h3>GlowNest Skincare</h3>
+            <p>A clean, feminine and responsive skincare landing page. Features a hero section, product cards, testimonials and a contact form with form validation.</p>
+            <div class="project-links">
+              <a href="Glownest skincare/index.html" target="_blank" rel="noopener">View Project →</a>
+              <a href="https://github.com/E-Tech070" target="_blank" rel="noopener">GitHub →</a>
+            </div>
+          </div>
         </div>
+
+        <!-- Color Generator -->
+        <div class="project-card">
+          <div class="project-img">
+            <img src="./images/random_color.jpg" alt="Random Color Generator" loading="lazy" />
+            <div class="project-overlay">
+              <a href="./Random Color Generator/random_color.html" target="_blank" rel="noopener" class="project-link-btn">View Live</a>
+              <a href="https://github.com/E-Tech070" target="_blank" rel="noopener" class="project-link-btn project-link-btn--outline">Source Code</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+            <h3>Random Color Generator</h3>
+            <p>A fun JavaScript project that generates a random HEX color code at the click of a button. The background changes to the new color and the code is displayed on screen. Great practice for DOM manipulation.</p>
+            <div class="project-links">
+              <a href="./Random Color Generator/random_color.html" target="_blank" rel="noopener">View Project →</a>
+              <a href="https://github.com/E-Tech070" target="_blank" rel="noopener">GitHub →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Emperor Airline -->
+        <div class="project-card">
+          <div class="project-img">
+            <img src="./images/emperor_airline.jpg" alt="Emperor Airline" loading="lazy" />
+            <div class="project-overlay">
+              <a href="./Emperor Airline/index.html" target="_blank" rel="noopener" class="project-link-btn">View Live</a>
+              <a href="https://github.com/E-Tech070" target="_blank" rel="noopener" class="project-link-btn project-link-btn--outline">Source Code</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+            <h3>Emperor Airline</h3>
+            <p>A modern, responsive airline website with a focus on luxury and user experience. Features include a booking system, destination highlights, and a sleek design.</p>
+            <div class="project-links">
+              <a href="./Emperor Airline/index.html" target="_blank" rel="noopener">View Project →</a>
+              <a href="https://github.com/E-Tech070" target="_blank" rel="noopener">GitHub →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Color Generator -->
+        <div class="project-card">
+          <div class="project-img">
+            <img src="./images/random_color.jpg" alt="Random Color Generator" loading="lazy" />
+            <div class="project-overlay">
+              <a href="./Random Color Generator/random_color.html" target="_blank" rel="noopener" class="project-link-btn">View Live</a>
+              <a href="https://github.com/E-Tech070" target="_blank" rel="noopener" class="project-link-btn project-link-btn--outline">Source Code</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+            <h3>Random Color Generator</h3>
+            <p>A fun JavaScript project that generates a random HEX color code at the click of a button. The background changes to the new color and the code is displayed on screen. Great practice for DOM manipulation.</p>
+            <div class="project-links">
+              <a href="./Random Color Generator/random_color.html" target="_blank" rel="noopener">View Project →</a>
+              <a href="https://github.com/E-Tech070" target="_blank" rel="noopener">GitHub →</a>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Dice Roller -->
+        <div class="project-card">
+          <div class="project-img">
+            <img src="./images/dice.jpg" alt="Dice Roller" loading="lazy" />
+            <div class="project-overlay">
+              <a href="./Dice Roller/index.html" target="_blank" rel="noopener" class="project-link-btn">View Live</a>
+              <a href="https://github.com/E-Tech070" target="_blank" rel="noopener" class="project-link-btn project-link-btn--outline">Source Code</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+            <h3>Dice Roller</h3>
+            <p>A JavaScript dice rolling app that displays a random dice face from 1 to 6 every time you click the roll button. Built using Math.random() and JavaScript DOM updates. Fun and interactive mini project.</p>
+            <div class="project-links">
+              <a href="./Dice Roller/index.html" target="_blank" rel="noopener">View Project →</a>
+              <a href="https://github.com/E-Tech070" target="_blank" rel="noopener">GitHub →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coming soon card -->
+        <div class="project-card project-card--soon">
+          <div class="project-soon-inner">
+            <span class="soon-icon">⚡</span>
+            <h3>More Coming Soon</h3>
+            <p>I am always building new projects and improving my skills. Currently working on a restaurant website — coming soon. Follow my GitHub to stay updated.</p>
+            <a href="https://github.com/E-Tech070" target="_blank" rel="noopener" class="btn btn-outline">Follow on GitHub</a>
+          </div>
+        </div>
+
       </div>
-      <div class="footer-bottom">
-        <p>
-          &copy; 2026 Emperor. All rights reserved. Built with HTML, CSS &
-          JavaScript.
-        </p>
+    </div>
+  </section>
+  <!-- TESTIMONIALS SECTION -->
+  <section class="testimonials" id="testimonials">
+    <div class="testimonials-inner">
+      <div class="section-tag">Kind Words</div>
+      <h2 class="section-title">What People Say</h2>
+      <p class="section-subtitle">Feedback from people I have worked with and helped.</p>
+
+      <div class="testimonials-grid">
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Emperor built our clothing website and it came out better than we imagined. He was fast, responsive and always open to feedback. We are very happy with the result."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">S</div>
+            <div class="author-info">
+              <strong>Splendor</strong>
+              <span>Calm Pressure Clothing</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card testimonial-card--featured">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Great attention to detail and a pleasure to work with. Emperor understood exactly what we needed and delivered a clean, professional website. I would recommend him to anyone looking for a web developer."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">J</div>
+            <div class="author-info">
+              <strong>Janelle</strong>
+              <span>Janelle Luxury Hairs</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Working with Emperor was a smooth experience from start to finish. He asked the right questions, understood the brand and delivered a beautiful website. Very talented for someone just starting out."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">G</div>
+            <div class="author-info">
+              <strong>GlowNest Client</strong>
+              <span>GlowNest Skincare</span>
+            </div>
+          </div>
+        </div>
+
       </div>
-    </footer>
+    </div>
+  </section>
 
-    <!-- BACK TO TOP -->
-    <button id="backToTop" aria-label="Back to top">↑</button>
+  <!-- CONTACT SECTION -->
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <div class="section-tag">Get In Touch</div>
+      <h2 class="section-title">Let's Work Together</h2>
+      <p class="section-subtitle">Have a project in mind? Want to hire me? Or just want to say hello? I would love to hear from you.</p>
 
-    <script src="js/script.js"></script>
-  </body>
+      <div class="contact-content">
+        <div class="contact-cards">
+
+          <div class="contact-card">
+            <span class="contact-icon"><i class="bi bi-envelope-fill"></i></span>
+            <h4>Email Me</h4>
+            <p>For project inquiries and work opportunities</p>
+            <a href="mailto:kelvinriches7@gmail.com">kelvinriches7@gmail.com</a>
+          </div>
+
+          <div class="contact-card">
+            <span class="contact-icon"><i class="bi bi-whatsapp"></i></span>
+            <h4>WhatsApp</h4>
+            <p>Chat with me directly for fast responses</p>
+            <a href="https://wa.me/2348107796481" target="_blank" rel="noopener">Send a message</a>
+          </div>
+
+          <div class="contact-card">
+            <span class="contact-icon"><i class="bi bi-linkedin"></i></span>
+            <h4>LinkedIn</h4>
+            <p>Connect with me professionally</p>
+            <a href="https://linkedin.com/in/emperortechstudio" target="_blank" rel="noopener">emperortechstudio</a>
+          </div>
+
+          <div class="contact-card">
+            <span class="contact-icon"><i class="bi bi-github"></i></span>
+            <h4>GitHub</h4>
+            <p>Check out my code and projects</p>
+            <a href="https://github.com/E-Tech070" target="_blank" rel="noopener">E-Tech070</a>
+          </div>
+
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <h3>Send Me a Message</h3>
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" placeholder="Your full name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="your@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" placeholder="What is this about?" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <a href="#home" class="footer-logo">Emperor<span>.</span></a>
+        <p>Frontend Web Developer & Founder of EmperorTech_Studio. Building the web one project at a time.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-social">
+        <h4>Find Me Online</h4>
+        <a href="https://github.com/E-Tech070" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/emperortechstudio" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://wa.me/2348107796481" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="mailto:kelvinriches7@gmail.com">Email</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Emperor. All rights reserved. Built with HTML, CSS & JavaScript.</p>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <button id="backToTop" aria-label="Back to top">↑</button>
+
+  <script src="js/script.js"></script>
+</body>
+
 </html>

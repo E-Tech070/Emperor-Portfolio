@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Random Color Generator</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  
+</head>
+
+<body>
+
+  <div class="page">
+
+   
+    <div class="header">
+      <a href="../index.html" class="back-btn">← Back to Portfolio</a>
+      <p class="header-tag">JavaScript Project</p>
+    </div>
+
+   
+    <div class="card">
+
+      
+      <div class="color-preview" id="colorPreview">
+        <div class="preview-inner">
+          <p class="preview-label">Current Color</p>
+          <p class="hex-code" id="hexCode">#FFFFFF</p>
+          <button class="copy-btn" id="copyBtn">Copy HEX Code</button>
+        </div>
+      </div>
+
+     
+      <div class="controls">
+        <h1>Random Color Generator</h1>
+        <p class="subtitle">Click the button to generate a random color. Copy the HEX code to use it in your own projects.</p>
+
+        
+        <div class="rgb-values">
+          <div class="rgb-item">
+            <span class="rgb-label">R</span>
+            <span class="rgb-num" id="redVal">255</span>
+          </div>
+          <div class="rgb-item">
+            <span class="rgb-label">G</span>
+            <span class="rgb-num" id="greenVal">255</span>
+          </div>
+          <div class="rgb-item">
+            <span class="rgb-label">B</span>
+            <span class="rgb-num" id="blueVal">255</span>
+          </div>
+        </div>
+
+       
+        <button class="generate-btn" id="generateBtn">
+          Generate Color
+        </button>
+
+        
+        <div class="history-section">
+          <p class="history-label">Recent Colors</p>
+          <div class="history-row" id="historyRow">
+            
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    
+    <p class="footer-note">Built with HTML, CSS & JavaScript &mdash; EmperorTech_Studio</p>
+
+  </div>
+
+  <script src="random_color.js"></script>
+</body>
+
+</html>

@@ -1197,3 +1197,216 @@ ul {
     display: none;
   }
 }
+
+/* ==============================
+   CV DOWNLOAD BUTTON
+   ============================== */
+
+.btn-cv {
+  background-color: transparent;
+  color: #888888;
+  border: 2px solid #2a2a2a;
+  font-size: 14px;
+}
+
+.btn-cv:hover {
+  border-color: #f0c040;
+  color: #f0c040;
+  transform: translateY(-2px);
+}
+
+
+/* ==============================
+   SKILL BAR - WORD LABELS
+   ============================== */
+
+/* Remove old percentage style and use word labels */
+.skill-bar {
+  background-color: #2a2a2a;
+  border-radius: 20px;
+  height: 28px;
+  overflow: visible;
+  position: relative;
+}
+
+.skill-fill {
+  height: 100%;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 12px;
+  position: relative;
+  background: linear-gradient(to right, #f0c040, #e0a830);
+}
+
+.skill-fill span {
+  position: static;
+  font-size: 12px;
+  font-weight: 700;
+  color: #0a0a0a;
+  letter-spacing: 0.5px;
+}
+
+/* Word label widths */
+.skill-fill--beginner    { width: 30%; }
+.skill-fill--intermediate { width: 50%; }
+.skill-fill--good        { width: 65%; }
+.skill-fill--advanced    { width: 80%; }
+.skill-fill--expert      { width: 95%; }
+
+/* Keep colors for different skills */
+.skill-fill--expert      { background: linear-gradient(to right, #0078d4, #0058b0); }
+.skill-fill--intermediate { background: linear-gradient(to right, #f05032, #c03020); }
+
+
+/* ==============================
+   TESTIMONIALS SECTION
+   ============================== */
+
+.testimonials {
+  padding: 100px 25px;
+  background-color: #0f0f0f;
+}
+
+.testimonials-inner {
+  max-width: 1150px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.testimonial-card {
+  background-color: #141414;
+  border: 1px solid #2a2a2a;
+  border-radius: 16px;
+  padding: 28px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  border-color: #f0c040;
+}
+
+/* Featured testimonial stands out with gold border */
+.testimonial-card--featured {
+  border-color: #f0c040;
+  background: linear-gradient(135deg, #141414, #1a1500);
+}
+
+.testimonial-stars {
+  color: #f0c040;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+.testimonial-text {
+  font-size: 14px;
+  color: #888888;
+  line-height: 1.8;
+  font-style: italic;
+  flex: 1;
+}
+
+.testimonial-card--featured .testimonial-text {
+  color: #aaaaaa;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid #2a2a2a;
+}
+
+.author-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: #f0c040;
+  color: #0a0a0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Syne', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.author-info strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 3px;
+}
+
+.author-info span {
+  font-size: 12px;
+  color: #666666;
+}
+
+
+/* ==============================
+   WHATSAPP CONTACT CARD
+   ============================== */
+
+/* Make contact cards wrap nicely with 4 cards */
+.contact-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contact-card {
+  background-color: #141414;
+  border: 1px solid #2a2a2a;
+  border-radius: 14px;
+  padding: 22px;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-card:hover {
+  border-color: #f0c040;
+  transform: translateX(5px);
+}
+
+
+/* ==============================
+   RESPONSIVE - TESTIMONIALS
+   ============================== */
+
+@media (max-width: 1024px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-btns {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn-cv {
+    width: 100%;
+    text-align: center;
+  }
+}
