@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Emperor's Kitchen — Authentic Nigerian Cuisine</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="logo">Emperor's <span>Kitchen</span></a>
+  <ul class="nav-links">
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#about">Our Story</a></li>
+    <li><a href="#drinks">Drinks</a></li>
+    <li><a href="#reservation">Reserve</a></li>
+  </ul>
+  <a href="#reservation" class="nav-order">Order Now</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-tag">🇳🇬 100% Authentic Nigerian Cuisine</div>
+    <h1>Taste the <em>Soul</em> of Nigeria</h1>
+    <p>From smoky Jollof  to steaming Egusi soup — every dish cooked with love, just like Mama made it.</p>
+    <div class="hero-btns">
+      <a href="#menu" class="btn-main">Explore Menu</a>
+      <a href="#reservation" class="btn-outline-white">Book a Table</a>
+    </div>
+  </div>
+  <div class="hero-dish">
+    <img src="./Images/Jollof-rice.jpg" alt="Jollof Rice"/>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<div class="features">
+  <div class="feature-item reveal">
+    <div class="feature-icon">🔥</div>
+    <div class="feature-text"><h4>Made Fresh Daily</h4><p>Cooked from scratch every morning</p></div>
+  </div>
+  <div class="feature-item reveal">
+    <div class="feature-icon">🌿</div>
+    <div class="feature-text"><h4>Natural Ingredients</h4><p>No artificial flavours or preservatives</p></div>
+  </div>
+  <div class="feature-item reveal">
+    <div class="feature-icon">🚚</div>
+    <div class="feature-text"><h4>Fast Delivery</h4><p>Hot to your door in 45 minutes</p></div>
+  </div>
+  <div class="feature-item reveal">
+    <div class="feature-icon">❤️</div>
+    <div class="feature-text"><h4>Cooked with Love</h4><p>Family recipes passed down generations</p></div>
+  </div>
+</div>
+
+<!-- MENU -->
+<section class="menu" id="menu">
+  <div class="menu-header reveal">
+    <div class="eyebrow">Our Menu</div>
+    <h2 class="section-title">Real Nigerian Flavours</h2>
+    <p class="section-sub">From classic rice dishes to rich soups and street food favourites — there's something for everyone.</p>
+  </div>
+  <div class="menu-tabs reveal">
+    <button class="tab active" onclick="switchTab('rice',this)">🍚 Rice Dishes</button>
+    <button class="tab" onclick="switchTab('soups',this)">🍲 Soups & Swallows</button>
+    <button class="tab" onclick="switchTab('street',this)">🔥 Street Food</button>
+    <button class="tab" onclick="switchTab('breakfast',this)">🌅 Breakfast</button>
+    <button class="tab" onclick="switchTab('african',this)">🌍 African Specials</button>
+  </div>
+
+  <!-- RICE -->
+  <div id="rice" class="menu-panel active">
+    <div class="food-card reveal">
+      <img src="./Images/Jollof-rice.jpg" alt="Jollof Rice"/>
+      <div class="food-card-body">
+        <div class="food-card-name">Nigerian Jollof Rice</div>
+        <div class="food-card-desc">The legendary smoky party Jollof, slow-cooked in tomato and pepper sauce with aromatic spices. Served with fried chicken or beef.</div>
+        <div class="food-card-footer"><span class="food-price">₦3,500</span><span class="food-tag popular">🏆 Fan Favourite</span></div>
+      </div>
+    </div>
+    <div class="food-card reveal">
+      <img src="./Images/fried-rice.jpg" alt="Fried Rice"/>
+      <div class="food-card-body">
+        <div class="food-card-name">Nigerian Fried Rice</div>
+        <div class="food-card-desc">Fragrant long-grain rice stir-fried with mixed vegetables, liver, prawns and a secret blend of seasoning.</div>
+        <div class="food-card-footer"><span class="food-price">₦3,800</span><span class="food-tag popular">⭐ Popular</span></div>
+      </div>
+    </div>
+    <div class="food-card reveal">
+      <img src="./Images/coconut-rice.jpg" alt="Coconut Rice"/>
+      <div class="food-card-body">
+        <div class="food-card-name">Coconut Rice</div>
+        <div class="food-card-desc">Fluffy rice cooked in rich coconut milk with bay leaves and a touch of chilli. Served with grilled fish or stew.</div>
+        <div class="food-card-footer"><span class="food-price">₦3,200</span><span class="food-tag">Creamy</span></div>
+      </div>
+    </div>
+    <div class="food-card reveal">
+      <img src="./Images/ofada-rice.jpg" alt="Ofada Rice"/>
+      <div class="food-card-body">
+        <div class="food-card-name">Ofada Rice & Sauce</div>
+        <div class="food-card-desc">Local unpolished Ofada rice served with smoky ayamase (designer) sauce packed with assorted meats and peppers.</div>
+        <div class="food-card-footer"><span class="food-price">₦4,200</span><span class="food-tag spicy">🌶 Spicy</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SOUPS -->
+  <div id="soups" class="menu-panel">
+    <div class="food-card reveal">
+      <img src="./Images/egusi-soup.jpg" alt="Egusi Soup"/>
+      <div class="food-card-body">
+        <div class="food-card-name">Egusi Soup</div>
+        <div class="food-card-desc">Rich melon seed soup cooked with assorted meats, stockfish, crayfish, and fresh ugu leaves. Served with pounded yam or eba.</div>
+        <div class="food-card-footer"><span class="food-price">₦4,500</span><span class="food-tag popular">🏆 Best Seller</span></div>
+      </div>
+    </div>
+    <div class="food-card reveal">
+      <img src="./Images/ogbono-soup.jpg" alt="Ogbono Soup"/>
+      <div class="food-card-body">
+        <div class="food-card-name">Ogbono Soup</div>
+        <div class="food-card-desc">Thick draw soup made from ground ogbono seeds with assorted meats, crayfish, and leafy greens. Perfect with swallow.</div>
+        <div class="food-card-footer"><span class="food-price">₦4,200</span><span class="food-tag">Draw Soup</span></div>
+      </div>
+    </div>
+    <div class="food-card reveal">
+      <img src="./Images/pounded-yam.jpg" alt="Pounded Yam"/>
+      <div class="food-card-body">
+        <div class="food-card-name">Pounded Yam</div>
+        <div class="food-card-desc">Smooth, stretchy pounded yam made the traditional way. Pairs perfectly with any of our soups.</div>
+        <div class="food-card-footer"><span class="food-price">₦800</span><span class="food-tag popular">⭐ Popular</span></div>
+      </div>
+    </div>
+    <div class="food-card reveal">
+      <img src="./Images/afang-soup.jpg" alt="Afang Soup"/>
+      <div class="food-card-body">
+        <div class="food-card-name">Afang Soup</div>
+        <div class="food-card-desc">A treasured soup from Cross River made with wild Afang leaves, water leaves, assorted meats, periwinkle and crayfish.</div>
+        <div class="food-card-footer"><span class="food-price">₦5,000</span><span class="food-tag">Premium</span></div>
+      </div>
+    </div>
+    <div class="food-card reveal">
+      <img src="./Images/banga-soup.jpg" alt="Banga Soup"/>
+      <div class="food-card-body">
+        <div class="food-card-name">Banga Soup & Starch</div>
+        <div class="food-card-desc">Delta State classic — palm fruit soup with catfish, assorted meats and fragrant Banga spices. Heavenly with starch.</div>
+        <div class="food-card-footer"><span class="food-price">₦5,500</span><span class="food-tag spicy">🌶 Rich</span></div>
+      </div>
+    </div>
+    <div class="food-card reveal">
+      <img src="./Images/amala-ewedu.jpg" alt="Amala"/>
+      <div class="food-card-body">
+        <div class="food-card-name">Amala & Ewedu</div>
+        <div class="food-card-desc">Dark yam flour swallow served with silky ewedu soup, gbegiri (bean soup) and assorted beef stew. A Yoruba classic.</div>
+        <div class="food-card-footer"><span class="food-price">₦3,800</span><span class="food-tag popular">🏆 Yoruba Classic</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STREET FOOD -->
+  <div id="street" class="menu-panel">
+    <div class="food-card reveal">
+      <img src="./Images/suya.jpg" alt="Suya"/>
+      <div class="food-card-body">
+        <div class="food-card-name">Beef Suya</div>
+        <div class="food-card-desc">Thinly sliced spiced beef skewers grilled over open flame with groundnut spice, onion and tomato. The ultimate Nigerian street snack.</div>
+        <div class="food-card-footer"><span class="food-price">₦2,500</span><span class="food-tag spicy">🔥 Smoky & Spicy</span></div>
+      </div>
+    </div>
+    <div class="food-card reveal">
+      <img src="./Images/puff-puff.jpg" alt="Puff Puff"/>
+      <div class="food-card-body">
+        <div class="food-card-name">Puff-Puff</div>
+        <div class="food-card-desc">Deep-fried golden dough balls — sweet, soft and fluffy inside. Served with pepper sauce or on their own. Pure joy.</div>
+        <div class="food-card-footer"><span class="food-price">₦800</span><span class="food-tag popular">😋 Crowd Pleaser</span></div>
+      </div>
+    </div>
+    <div class="food-card reveal">
+      <img src="./Images/akara.jpg" alt="Akara"/>
+      <div class="food-card-body">
+        <div class="food-card-name">Akara (Bean Cakes)</div>
+        <div class="food-card-desc">Crispy fried bean fritters blended with onion, pepper and crayfish. Hot from the pan and incredibly satisfying.</div>
+        <div class="food-card-footer"><span class="food-price">₦900</span><span class="food-tag">Vegetarian Option</span></div>
+      </div>
+    </div>
+    <div class="food-card reveal">
+      <img src="./Images/snail.jpg" alt="Peppered Snail"/>
+      <div class="food-card-body">
+        <div class="food-card-name">Peppered Snail</div>
+        <div class="food-card-desc">Giant Congo snails cooked in a bold pepper and tomato sauce with onions, seasoning cubes and uziza leaf. A true delicacy.</div>
+        <div class="food-card-footer"><span class="food-price">₦4,800</span><span class="food-tag popular">⭐ Premium Snack</span></div>
+      </div>
+    </div>
+    <div class="food-card reveal">
+      <img src="./Images/moi-moi.jpg" alt="Moi Moi"/>
+      <div class="food-card-body">
+        <div class="food-card-name">Moi Moi</div>
+        <div class="food-card-desc">Steamed bean pudding with eggs, fish, and peppers wrapped in banana leaves. Silky, savoury and deeply satisfying.</div>
+        <div class="food-card-footer"><span class="food-price">₦1,200</span><span class="food-tag">Classic</span></div>
+      </div>
+    </div>
+    <div class="food-card reveal">
+      <img src="./Images/beans-plantain.jpg" alt="Beans and Plantain"/>
+      <div class="food-card-body">
+        <div class="food-card-name">Beans & Fried Plantain</div>
+        <div class="food-card-desc">Richly cooked black-eyed beans in palm oil stew served alongside sweet caramelised fried plantain. A beloved combo.</div>
+        <div class="food-card-footer"><span class="food-price">₦2,200</span><span class="food-tag popular">❤️ Comfort Food</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BREAKFAST -->
+  <div id="breakfast" class="menu-panel">
+    <div class="food-card reveal">
+      <img src="./Images/akara.jpg" alt="Pap and Akara"/>
+      <div class="food-card-body">
+        <div class="food-card-name">Pap & Akara</div>
+        <div class="food-card-desc">Warm fermented corn porridge (ogi) sweetened with milk and sugar, served alongside crispy hot akara bean cakes.</div>
+        <div class="food-card-footer"><span class="food-price">₦1,800</span><span class="food-tag popular">🌅 Morning Favourite</span></div>
+      </div>
+    </div>
+    <div class="food-card reveal">
+      <img src="./Images/yam-egg.jpg" alt="Yam and Egg Sauce"/>
+      <div class="food-card-body">
+        <div class="food-card-name">Yam & Egg Sauce</div>
+        <div class="food-card-desc">Boiled or fried yam served with a vibrant tomato, pepper and onion egg sauce. Simple, filling and deeply nostalgic.</div>
+        <div class="food-card-footer"><span class="food-price">₦2,000</span><span class="food-tag">Hearty</span></div>
+      </div>
+    </div>
+    <div class="food-card reveal">
+      <img src="./Images/yam-porridge.jpg" alt="Yam Porridge"/>
+      <div class="food-card-body">
+        <div class="food-card-name">Yam Porridge (Asaro)</div>
+        <div class="food-card-desc">Soft yam cooked down in palm oil with peppers, crayfish and assorted proteins. Comforting and full of flavour.</div>
+        <div class="food-card-footer"><span class="food-price">₦2,500</span><span class="food-tag popular">😋 Must-Try</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AFRICAN -->
+  <div id="african" class="menu-panel">
+    <div class="food-card reveal">
+      <img src="https://images.unsplash.com/photo-1504544750208-dc0358e63f7f?w=500&q=80" alt="Thieboudienne"/>
+      <div class="food-card-body">
+        <div class="food-card-name">Thiéboudienne (Senegal)</div>
+        <div class="food-card-desc">Senegal's national dish — fragrant rice cooked in a rich tomato-fish broth with vegetables. A West African masterpiece.</div>
+        <div class="food-card-footer"><span class="food-price">₦5,500</span><span class="food-tag">🌍 West African</span></div>
+      </div>
+    </div>
+    <div class="food-card reveal">
+      <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500&q=80" alt="Nyama Choma"/>
+      <div class="food-card-body">
+        <div class="food-card-name">Nyama Choma (Kenya)</div>
+        <div class="food-card-desc">East African-style roasted goat meat, slow-cooked over charcoal until tender. Served with kachumbari salsa and ugali.</div>
+        <div class="food-card-footer"><span class="food-price">₦6,000</span><span class="food-tag spicy">🔥 Grilled</span></div>
+      </div>
+    </div>
+    <div class="food-card reveal">
+      <img src="https://images.unsplash.com/photo-1574484284002-952d92456975?w=500&q=80" alt="Muamba"/>
+      <div class="food-card-body">
+        <div class="food-card-name">Muamba Chicken (Congo)</div>
+        <div class="food-card-desc">Central African chicken stew in a thick palm oil and chilli sauce with okra. Bold and deeply satisfying.</div>
+        <div class="food-card-footer"><span class="food-price">₦5,200</span><span class="food-tag">Central African</span></div>
+      </div>
+    </div>
+    <div class="food-card reveal">
+      <img src="https://images.unsplash.com/photo-1512058533999-3873a74df698?w=500&q=80" alt="Injera"/>
+      <div class="food-card-body">
+        <div class="food-card-name">Injera & Doro Wat (Ethiopia)</div>
+        <div class="food-card-desc">Spongy sourdough flatbread topped with slow-cooked spiced chicken in berbere sauce. A legendary Ethiopian experience.</div>
+        <div class="food-card-footer"><span class="food-price">₦5,800</span><span class="food-tag spicy">🌶 Spiced</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POPULAR QUICK BITES -->
+<section class="popular" id="popular">
+  <div class="reveal">
+    <div class="eyebrow">Quick Picks</div>
+    <h2 class="section-title">Most Ordered Today</h2>
+  </div>
+  <div class="popular-grid">
+    <div class="popular-card reveal"><div class="popular-emoji">🍚</div><div><h4>Party Jollof</h4><p>₦3,500 · 25–35 min</p></div></div>
+    <div class="popular-card reveal"><div class="popular-emoji">🍖</div><div><h4>Beef Suya</h4><p>₦2,500 · 20 min</p></div></div>
+    <div class="popular-card reveal"><div class="popular-emoji">🍲</div><div><h4>Egusi + Pounded Yam</h4><p>₦5,300 · 30 min</p></div></div>
+    <div class="popular-card reveal"><div class="popular-emoji">🫘</div><div><h4>Beans & Plantain</h4><p>₦2,200 · 20 min</p></div></div>
+    <div class="popular-card reveal"><div class="popular-emoji">🐌</div><div><h4>Peppered Snail</h4><p>₦4,800 · 30 min</p></div></div>
+    <div class="popular-card reveal"><div class="popular-emoji">🥘</div><div><h4>Amala & Ewedu</h4><p>₦3,800 · 25 min</p></div></div>
+    <div class="popular-card reveal"><div class="popular-emoji">🟤</div><div><h4>Puff-Puff (12 pcs)</h4><p>₦800 · 15 min</p></div></div>
+    <div class="popular-card reveal"><div class="popular-emoji">🌽</div><div><h4>Yam Porridge</h4><p>₦2,500 · 25 min</p></div></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-imgs reveal">
+    <img class="about-img-big" src="./Images/chef.jpg" alt="Chef cooking"/>
+    <img class="about-img-small" src="./Images/food.jpg" alt="Nigerian food"/>
+    <div class="about-badge">
+      <div class="about-badge-num">22+</div>
+      <div class="about-badge-label">Years Cooking</div>
+    </div>
+  </div>
+  <div class="about-text reveal">
+    <div class="eyebrow">Our Story</div>
+    <h2 class="section-title">Cooking From the Heart Since 2002</h2>
+    <div class="divider"></div>
+    <p class="section-sub">Emperor's Kitchen started as a small pot of Jollof rice in Delta State. Emperor's Kitchen cooked for neighbours, then for the whole street, and eventually for the city.</p>
+    <br>
+    <p class="section-sub">Today, we serve hundreds of guests daily — but every dish is still made with the same love, the same family recipes, and the same belief that good food brings people together.</p>
+    <br><br>
+    <a href="#menu" class="btn-main">See the Full Menu</a>
+  </div>
+</section>
+
+<!-- DRINKS -->
+<section class="drinks" id="drinks">
+  <div class="reveal" style="text-align:center;">
+    <div class="eyebrow">Traditional Drinks</div>
+    <h2 class="section-title">Refresh Yourself</h2>
+    <p class="section-sub" style="margin:0.8rem auto 0;">Cool local drinks brewed fresh in-house every day.</p>
+  </div>
+  <div class="drinks-grid">
+    <div class="drink-card reveal">
+      <div class="drink-icon">🌺</div>
+      <div class="drink-name">Zobo</div>
+      <div class="drink-desc">Chilled hibiscus flower drink with ginger, cloves and pineapple. Refreshing, tangy and naturally sweet.</div>
+      <div class="drink-price">₦800</div>
+    </div>
+    <div class="drink-card reveal">
+      <div class="drink-icon">🌾</div>
+      <div class="drink-name">Kunu</div>
+      <div class="drink-desc">Smooth millet-based drink sweetened with dates and spiced with ginger. Cool and incredibly nutritious.</div>
+      <div class="drink-price">₦700</div>
+    </div>
+    <div class="drink-card reveal">
+      <div class="drink-icon">🥥</div>
+      <div class="drink-name">Palm Wine</div>
+      <div class="drink-desc">Freshly tapped natural palm wine — slightly sweet, slightly fermented. Straight from the tree to your glass.</div>
+      <div class="drink-price">₦1,200</div>
+    </div>
+    <div class="drink-card reveal">
+      <div class="drink-icon">🌰</div>
+      <div class="drink-name">Tiger Nut Drink</div>
+      <div class="drink-desc">Creamy, milky Kunu Aya — ground tiger nuts blended with dates, coconut and a touch of vanilla.</div>
+      <div class="drink-price">₦900</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="reveal">
+    <div class="eyebrow">What People Say</div>
+    <h2 class="section-title">Our Happy Guests</h2>
+  </div>
+  <div class="test-grid">
+    <div class="test-card reveal">
+      <div class="test-stars">★★★★★</div>
+      <p class="test-quote">"The Egusi soup tasted really great no doubt i will be coming back for more."</p>
+      <div class="test-author">Chioma O.</div>
+      <div class="test-location">Lagos Island</div>
+    </div>
+    <div class="test-card reveal">
+      <div class="test-stars">★★★★★</div>
+      <p class="test-quote">"I ordered the Party Jollof for my son's birthday. Every single guest asked me where I got it from. Emperor's Kitchen for life!"</p>
+      <div class="test-author">Bayo A.</div>
+      <div class="test-location">Sapele</div>
+    </div>
+    <div class="test-card reveal">
+      <div class="test-stars">★★★★★</div>
+      <p class="test-quote">"As a Kenyan living in Delta, I was amazed they had Nyama Choma on the menu. Tasted like home. Incredible restaurant."</p>
+      <div class="test-author">Wanjiku M.</div>
+      <div class="test-location">Asaba</div>
+    </div>
+  </div>
+</section>
+
+<!-- RESERVATION -->
+<section class="reservation" id="reservation">
+
+  <div class="reveal">
+
+    <div class="eyebrow reservation-tag">
+      🍽 Book a Table
+    </div>
+
+    <h2 class="section-title">
+      Reserve Your Seat
+    </h2>
+
+    <p class="section-sub">
+      Walk-ins welcome, but bookings get priority seating and special treatment.
+    </p>
+
+  </div>
+
+  <div class="res-form reveal">
+
+    <input type="text" placeholder="Your Name"/>
+
+    <input type="tel" placeholder="Phone Number"/>
+
+    <input type="date"/>
+
+    <select>
+      <option>1 Guest</option>
+      <option>2 Guests</option>
+      <option>3 Guests</option>
+      <option>4 Guests</option>
+      <option>5+ Guests</option>
+    </select>
+
+    <select class="time-select">
+
+      <option>Select Time — 12:00 PM</option>
+      <option>1:00 PM</option>
+      <option>2:00 PM</option>
+      <option>6:00 PM</option>
+      <option>7:00 PM</option>
+      <option>8:00 PM</option>
+
+    </select>
+
+    <button class="btn-main booking-btn">
+      Confirm Booking
+    </button>
+
+  </div>
+
+</section>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="logo">Mama's <span>Kitchen</span></a>
+      <p>Authentic Nigerian cuisine cooked with love. Open 7 days a week from 8AM to 10PM.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Menu</h4>
+      <ul>
+        <li><a href="#">Rice Dishes</a></li>
+        <li><a href="#">Soups & Swallows</a></li>
+        <li><a href="#">Street Food</a></li>
+        <li><a href="#">Breakfast</a></li>
+        <li><a href="#">African Specials</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Visit Us</h4>
+      <ul>
+        <li><a href="#">12 Allen Avenue</a></li>
+        <li><a href="#">Ikeja, Lagos</a></li>
+        <li><a href="#">+234 802 000 0000</a></li>
+        <li><a href="#">hello@mamaskitchen.ng</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Hours</h4>
+      <ul>
+        <li><a href="#">Mon–Fri: 8AM – 10PM</a></li>
+        <li><a href="#">Sat: 9AM – 11PM</a></li>
+        <li><a href="#">Sun: 10AM – 9PM</a></li>
+        <li><a href="#">Public Holidays: Open</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Mama's Kitchen. Made with ❤️ in Lagos.</span>
+    <a href="#">Privacy Policy</a>
+  </div>
+</footer>
+
+<!-- WhatsApp -->
+<a href="https://wa.me/2348020000000" class="whatsapp-btn" title="Order on WhatsApp">💬</a>
+
+<script src="./script.js"></script>
+</body>
+</html>

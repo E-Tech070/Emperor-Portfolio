@@ -1,9 +1,7 @@
-/* ==============================
-   EMPEROR PORTFOLIO - STYLESHEET
-   ============================== */
+/* MY PORTFOLIO CSS */
 
 /* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap");
 
 /* Basic reset */
 * {
@@ -17,7 +15,7 @@ html {
 }
 
 body {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   background-color: #0a0a0a;
   color: #e8e8e8;
   line-height: 1.7;
@@ -38,9 +36,7 @@ ul {
   list-style: none;
 }
 
-/* ==============================
-   REUSABLE STYLES
-   ============================== */
+/*REUSABLE STYLES */
 
 .section-tag {
   display: inline-block;
@@ -53,7 +49,7 @@ ul {
 }
 
 .section-title {
-  font-family: 'Syne', sans-serif;
+  font-family: "Syne", sans-serif;
   font-size: 42px;
   font-weight: 800;
   color: #ffffff;
@@ -79,7 +75,7 @@ ul {
   cursor: pointer;
   transition: all 0.3s ease;
   border: none;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
 }
 
 .btn-primary {
@@ -111,9 +107,7 @@ ul {
   padding: 15px;
 }
 
-/* ==============================
-   NAVBAR
-   ============================== */
+/* NAVBAR */
 
 .navbar {
   position: fixed;
@@ -141,7 +135,7 @@ ul {
 }
 
 .nav-logo {
-  font-family: 'Syne', sans-serif;
+  font-family: "Syne", sans-serif;
   font-size: 22px;
   font-weight: 800;
   color: #ffffff;
@@ -165,7 +159,7 @@ ul {
 }
 
 .nav-links a::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -3px;
   left: 0;
@@ -214,9 +208,7 @@ ul {
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* ==============================
-   HERO SECTION
-   ============================== */
+/* HERO SECTION */
 
 .hero {
   min-height: 100vh;
@@ -230,13 +222,17 @@ ul {
 
 /* Subtle background glow */
 .hero::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -100px;
   right: -100px;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(240, 192, 64, 0.08) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(240, 192, 64, 0.08) 0%,
+    transparent 70%
+  );
   border-radius: 50%;
   pointer-events: none;
 }
@@ -262,7 +258,7 @@ ul {
 }
 
 .hero-name {
-  font-family: 'Syne', sans-serif;
+  font-family: "Syne", sans-serif;
   font-size: 72px;
   font-weight: 800;
   color: #ffffff;
@@ -360,8 +356,13 @@ ul {
 }
 
 @keyframes pulse-dot {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
 }
 
 .hero-card-stats {
@@ -379,7 +380,7 @@ ul {
 
 .stat-item strong {
   display: block;
-  font-family: 'Syne', sans-serif;
+  font-family: "Syne", sans-serif;
   font-size: 20px;
   font-weight: 800;
   color: #f0c040;
@@ -396,9 +397,7 @@ ul {
   background-color: #2a2a2a;
 }
 
-/* ==============================
-   ABOUT SECTION
-   ============================== */
+/*  ABOUT SECTION */
 
 .about {
   padding: 100px 25px;
@@ -468,7 +467,7 @@ ul {
 }
 
 .detail-card h4 {
-  font-family: 'Syne', sans-serif;
+  font-family: "Syne", sans-serif;
   font-size: 16px;
   font-weight: 700;
   color: #ffffff;
@@ -506,10 +505,7 @@ ul {
   color: #4caf50 !important;
 }
 
-/* ==============================
-   SKILLS SECTION
-   ============================== */
-
+/* SKILLS SECTION */
 .skills {
   padding: 100px 25px;
   background-color: #0a0a0a;
@@ -534,7 +530,9 @@ ul {
   border: 1px solid #2a2a2a;
   border-radius: 16px;
   padding: 28px;
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .skill-card:hover {
@@ -552,15 +550,32 @@ ul {
   margin-bottom: 18px;
 }
 
-.html-icon { background-color: rgba(227, 79, 38, 0.15); color: #e34f26; }
-.css-icon  { background-color: rgba(21, 114, 182, 0.15); color: #1572b6; }
-.js-icon   { background-color: rgba(240, 219, 79, 0.15); color: #f0db4f; }
-.ms-icon   { background-color: rgba(0, 120, 212, 0.15); color: #0078d4; }
-.git-icon  { background-color: rgba(240, 80, 50, 0.15); color: #f05032; }
-.learn-icon { background-color: rgba(240, 192, 64, 0.15); }
+.html-icon {
+  background-color: rgba(227, 79, 38, 0.15);
+  color: #e34f26;
+}
+.css-icon {
+  background-color: rgba(21, 114, 182, 0.15);
+  color: #1572b6;
+}
+.js-icon {
+  background-color: rgba(240, 219, 79, 0.15);
+  color: #f0db4f;
+}
+.ms-icon {
+  background-color: rgba(0, 120, 212, 0.15);
+  color: #0078d4;
+}
+.git-icon {
+  background-color: rgba(240, 80, 50, 0.15);
+  color: #f05032;
+}
+.learn-icon {
+  background-color: rgba(240, 192, 64, 0.15);
+}
 
 .skill-card h3 {
-  font-family: 'Syne', sans-serif;
+  font-family: "Syne", sans-serif;
   font-size: 18px;
   font-weight: 700;
   color: #ffffff;
@@ -602,10 +617,15 @@ ul {
   font-weight: 600;
 }
 
-.ms-fill  { background: linear-gradient(to right, #0078d4, #0058b0); }
-.git-fill { background: linear-gradient(to right, #f05032, #c03020); }
+.ms-fill {
+  background: linear-gradient(to right, #0078d4, #0058b0);
+}
+.git-fill {
+  background: linear-gradient(to right, #f05032, #c03020);
+}
 
-.skill-card--extra { }
+.skill-card--extra {
+}
 
 .skill-card--learning {
   border-color: rgba(240, 192, 64, 0.3);
@@ -628,10 +648,7 @@ ul {
   border-radius: 20px;
 }
 
-/* ==============================
-   PROJECTS SECTION
-   ============================== */
-
+/* PROJECTS SECTION */
 .projects {
   padding: 100px 25px;
   background-color: #0f0f0f;
@@ -655,7 +672,9 @@ ul {
   border: 1px solid #2a2a2a;
   border-radius: 16px;
   overflow: hidden;
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .project-card:hover {
@@ -761,7 +780,7 @@ ul {
 }
 
 .project-info h3 {
-  font-family: 'Syne', sans-serif;
+  font-family: "Syne", sans-serif;
   font-size: 20px;
   font-weight: 700;
   color: #ffffff;
@@ -813,7 +832,7 @@ ul {
 }
 
 .project-soon-inner h3 {
-  font-family: 'Syne', sans-serif;
+  font-family: "Syne", sans-serif;
   font-size: 20px;
   font-weight: 700;
   color: #ffffff;
@@ -827,9 +846,7 @@ ul {
   line-height: 1.7;
 }
 
-/* ==============================
-   CONTACT SECTION
-   ============================== */
+/* CONTACT SECTION */
 
 .contact {
   padding: 100px 25px;
@@ -861,7 +878,9 @@ ul {
   border: 1px solid #2a2a2a;
   border-radius: 14px;
   padding: 22px;
-  transition: border-color 0.3s ease, transform 0.3s ease;
+  transition:
+    border-color 0.3s ease,
+    transform 0.3s ease;
 }
 
 .contact-card:hover {
@@ -876,7 +895,7 @@ ul {
 }
 
 .contact-card h4 {
-  font-family: 'Syne', sans-serif;
+  font-family: "Syne", sans-serif;
   font-size: 16px;
   font-weight: 700;
   color: #ffffff;
@@ -910,7 +929,7 @@ ul {
 }
 
 .contact-form h3 {
-  font-family: 'Syne', sans-serif;
+  font-family: "Syne", sans-serif;
   font-size: 20px;
   font-weight: 700;
   color: #ffffff;
@@ -938,7 +957,7 @@ ul {
   border-radius: 10px;
   font-size: 14px;
   color: #e8e8e8;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: "Space Grotesk", sans-serif;
   outline: none;
   transition: border-color 0.3s ease;
 }
@@ -952,9 +971,7 @@ ul {
   resize: vertical;
 }
 
-/* ==============================
-   FOOTER
-   ============================== */
+/* FOOTER */
 
 .footer {
   background-color: #080808;
@@ -976,7 +993,7 @@ ul {
 }
 
 .footer-logo {
-  font-family: 'Syne', sans-serif;
+  font-family: "Syne", sans-serif;
   font-size: 24px;
   font-weight: 800;
   color: #ffffff;
@@ -1036,10 +1053,7 @@ ul {
   color: #444444;
 }
 
-/* ==============================
-   BACK TO TOP
-   ============================== */
-
+/* BACK TO TOP BUTTON */
 #backToTop {
   position: fixed;
   bottom: 30px;
@@ -1065,10 +1079,7 @@ ul {
   transform: translateY(-3px);
 }
 
-/* ==============================
-   RESPONSIVE - TABLET
-   ============================== */
-
+/* RESPONSIVE - TABLET */
 @media (max-width: 1024px) {
   .hero-inner {
     flex-direction: column;
@@ -1131,9 +1142,7 @@ ul {
   }
 }
 
-/* ==============================
-   RESPONSIVE - MOBILE
-   ============================== */
+/* RESPONSIVE - MOBILE */
 
 @media (max-width: 650px) {
   .hamburger {
@@ -1198,9 +1207,7 @@ ul {
   }
 }
 
-/* ==============================
-   CV DOWNLOAD BUTTON
-   ============================== */
+/* CV DOWNLOAD BUTTON */
 
 .btn-cv {
   background-color: transparent;
@@ -1215,10 +1222,7 @@ ul {
   transform: translateY(-2px);
 }
 
-
-/* ==============================
-   SKILL BAR - WORD LABELS
-   ============================== */
+/* SKILL BARS WORD LABELS */
 
 /* Remove old percentage style and use word labels */
 .skill-bar {
@@ -1249,20 +1253,31 @@ ul {
 }
 
 /* Word label widths */
-.skill-fill--beginner    { width: 30%; }
-.skill-fill--intermediate { width: 50%; }
-.skill-fill--good        { width: 65%; }
-.skill-fill--advanced    { width: 80%; }
-.skill-fill--expert      { width: 95%; }
+.skill-fill--beginner {
+  width: 30%;
+}
+.skill-fill--intermediate {
+  width: 50%;
+}
+.skill-fill--good {
+  width: 65%;
+}
+.skill-fill--advanced {
+  width: 80%;
+}
+.skill-fill--expert {
+  width: 95%;
+}
 
 /* Keep colors for different skills */
-.skill-fill--expert      { background: linear-gradient(to right, #0078d4, #0058b0); }
-.skill-fill--intermediate { background: linear-gradient(to right, #f05032, #c03020); }
+.skill-fill--expert {
+  background: linear-gradient(to right, #0078d4, #0058b0);
+}
+.skill-fill--intermediate {
+  background: linear-gradient(to right, #f05032, #c03020);
+}
 
-
-/* ==============================
-   TESTIMONIALS SECTION
-   ============================== */
+/* TESTIMONIALS SECTION */
 
 .testimonials {
   padding: 100px 25px;
@@ -1288,7 +1303,9 @@ ul {
   border: 1px solid #2a2a2a;
   border-radius: 16px;
   padding: 28px;
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -1340,7 +1357,7 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Syne', sans-serif;
+  font-family: "Syne", sans-serif;
   font-size: 18px;
   font-weight: 800;
   flex-shrink: 0;
@@ -1359,11 +1376,7 @@ ul {
   color: #666666;
 }
 
-
-/* ==============================
-   WHATSAPP CONTACT CARD
-   ============================== */
-
+/* CONTACT CARDS */
 /* Make contact cards wrap nicely with 4 cards */
 .contact-cards {
   display: flex;
@@ -1376,7 +1389,9 @@ ul {
   border: 1px solid #2a2a2a;
   border-radius: 14px;
   padding: 22px;
-  transition: border-color 0.3s ease, transform 0.3s ease;
+  transition:
+    border-color 0.3s ease,
+    transform 0.3s ease;
 }
 
 .contact-card:hover {
@@ -1384,11 +1399,7 @@ ul {
   transform: translateX(5px);
 }
 
-
-/* ==============================
-   RESPONSIVE - TESTIMONIALS
-   ============================== */
-
+/*RESPONSIVE - TESTIMONIALS */
 @media (max-width: 1024px) {
   .testimonials-grid {
     grid-template-columns: 1fr;

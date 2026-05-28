@@ -1,15 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
+  /* AOS Animation*/
 
-  // ============================================================
-  // AOS Animation
-  // ============================================================
   if (window.AOS) {
     AOS.init({ duration: 1200, easing: "ease-in-out", once: true });
   }
 
-  // ============================================================
-  // Back To Top Button
-  // ============================================================
+  /* Back To Top Button */
+
   const backToTop = document.getElementById("back-to-top");
   if (backToTop) {
     window.addEventListener("scroll", () => {
@@ -20,12 +17,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ============================================================
-  // Hamburger Menu
-  // — toggles .active on hamburger
-  // — toggles .open on nav (CSS slides it in from right)
-  // — toggles .active on overlay
-  // ============================================================
+  /* Hamburger Menu
+   — toggles .active on hamburger
+   — toggles .open on nav (CSS slides it in from right)
+   — toggles .active on overlay*/
+
   const hamburger = document.getElementById("hamburger");
   const nav = document.querySelector("nav");
   const overlay = document.getElementById("overlay");
@@ -57,33 +53,32 @@ document.addEventListener("DOMContentLoaded", () => {
     overlay.addEventListener("click", closeMenu);
   }
 
-  // Close menu when any nav link is clicked
-  document.querySelectorAll(".nav-link").forEach(link => {
+  /* Close menu when any nav link is clicked*/
+  document.querySelectorAll(".nav-link").forEach((link) => {
     link.addEventListener("click", closeMenu);
   });
 
-  // Close menu on Escape key
+  /* Close menu on Escape key*/
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") closeMenu();
   });
 
-  // ============================================================
-  // Active Nav Link on Scroll
-  // ============================================================
+  /* Active Nav Link on Scroll*/
+
   const sections = document.querySelectorAll("section[id]");
   const navLinks = document.querySelectorAll(".nav-link");
 
   if (sections.length && navLinks.length) {
     window.addEventListener("scroll", () => {
       let current = "";
-      sections.forEach(section => {
+      sections.forEach((section) => {
         const sectionTop = section.offsetTop - 120;
         if (window.scrollY >= sectionTop) {
           current = section.getAttribute("id");
         }
       });
 
-      navLinks.forEach(link => {
+      navLinks.forEach((link) => {
         link.classList.remove("active");
         if (link.getAttribute("href") === `#${current}`) {
           link.classList.add("active");
@@ -92,16 +87,39 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ============================================================
-  // Header Shadow Deepens on Scroll
-  // ============================================================
+  /*  Header Shadow Deepens on Scroll*/
+
   const header = document.querySelector(".header");
   if (header) {
     window.addEventListener("scroll", () => {
-      header.style.boxShadow = window.scrollY > 50
-        ? "0 4px 40px rgba(0,0,0,0.7)"
-        : "0 4px 30px rgba(0,0,0,0.4)";
+      header.style.boxShadow =
+        window.scrollY > 50
+          ? "0 4px 40px rgba(0,0,0,0.7)"
+          : "0 4px 30px rgba(0,0,0,0.4)";
     });
   }
 
+  /*  Preloader*/
+
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      const preloader = document.getElementById("preloader");
+      if (preloader) preloader.classList.add("hide");
+    }, 1800);
+  });
+
+  /* Cookie Notice*/
+
+  if (!localStorage.getItem("cp_cookies_accepted")) {
+    setTimeout(() => {
+      const notice = document.getElementById("cookie-notice");
+      if (notice) notice.classList.add("show");
+    }, 2000);
+  }
 });
+
+function acceptCookies() {
+  localStorage.setItem("cp_cookies_accepted", "1");
+  const notice = document.getElementById("cookie-notice");
+  if (notice) notice.classList.remove("show");
+}

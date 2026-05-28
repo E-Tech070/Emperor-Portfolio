@@ -1,9 +1,8 @@
 // Wait for page to load before running any code
 document.addEventListener("DOMContentLoaded", function() {
 
-  // ==============================
-  // HAMBURGER MENU
-  // ==============================
+  /* HAMBURGER MENU*/
+ 
 
   var hamburger = document.getElementById("hamburger");
   var navLinks = document.getElementById("navLinks");
@@ -23,9 +22,8 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
 
-  // ==============================
-  // NAVBAR SHADOW ON SCROLL
-  // ==============================
+  /* NAVBAR SHADOW ON SCROLL*/
+  
 
   var navbar = document.getElementById("navbar");
 
@@ -38,9 +36,8 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
 
-  // ==============================
-  // BACK TO TOP BUTTON
-  // ==============================
+  /*BACK TO TOP BUTTON */
+ 
 
   var backToTopBtn = document.getElementById("backToTop");
 
@@ -57,10 +54,8 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
 
-  // ==============================
-  // CONTACT FORM
-  // ==============================
-
+  /* CONTACT FORM */
+  
   var form = document.getElementById("contactForm");
 
   if (form) {
@@ -77,9 +72,8 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
 
-  // ==============================
-  // FADE IN SECTIONS ON SCROLL
-  // ==============================
+  /* FADE IN SECTIONS ON SCROLL*/
+  
 
   // Add a fade-in class to cards when they appear on screen
   var cards = document.querySelectorAll(".skill-card, .project-card, .contact-card, .why-card");

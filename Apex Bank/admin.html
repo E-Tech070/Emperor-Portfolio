@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Apex Bank — Admin Panel</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --bg:#0a0c10;--surface:#12151c;--surface2:#1a1f2b;--surface3:#222840;
+  --border:#ffffff0f;--border2:#ffffff18;
+  --text:#f0f2f7;--muted:#7880a0;--muted2:#4a5070;
+  --blue:#4f8ef7;--blue2:#2563eb;--blue-glow:#4f8ef720;
+  --green:#34d399;--green-bg:#34d39915;
+  --red:#f87171;--red-bg:#f8717115;
+  --yellow:#fbbf24;--yellow-bg:#fbbf2415;
+  --purple:#a78bfa;--purple-bg:#a78bfa15;
+  --radius:12px;--radius-lg:18px;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-track{background:transparent;}
+::-webkit-scrollbar-thumb{background:var(--surface3);border-radius:99px;}
+.hidden{display:none!important;}
+input,select,textarea{font-family:'DM Sans',sans-serif;}
+
+/* ── ADMIN LOGIN ── */
+#admin-login{min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--bg);position:relative;overflow:hidden;}
+#admin-login::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% -10%,#1e3a8a30,transparent);}
+.login-box{position:relative;z-index:1;width:100%;max-width:400px;padding:2.5rem;background:var(--surface);border:1px solid var(--border2);border-radius:var(--radius-lg);box-shadow:0 32px 80px rgba(0,0,0,.6);}
+.login-logo{display:flex;align-items:center;gap:.75rem;margin-bottom:2rem;}
+.login-logo-icon{width:40px;height:40px;border-radius:10px;background:var(--blue2);display:flex;align-items:center;justify-content:center;font-size:1.2rem;}
+.login-logo h1{font-size:1.1rem;font-weight:700;color:var(--text);}
+.login-logo p{font-size:.72rem;color:var(--muted);font-family:'DM Mono',monospace;margin-top:.1rem;}
+.login-box h2{font-size:1.4rem;font-weight:700;margin-bottom:.4rem;}
+.login-box .sub{font-size:.82rem;color:var(--muted);margin-bottom:1.8rem;}
+.field{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem;}
+.field label{font-size:.75rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;}
+.field input,.field select{padding:.75rem 1rem;background:var(--surface2);border:1.5px solid var(--border2);border-radius:10px;color:var(--text);font-size:.875rem;outline:none;transition:border-color .2s;}
+.field input:focus,.field select:focus{border-color:var(--blue);}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.7rem 1.4rem;border-radius:10px;border:none;font-family:'DM Sans',sans-serif;font-size:.875rem;font-weight:600;cursor:pointer;transition:all .2s;white-space:nowrap;}
+.btn-primary{background:var(--blue2);color:#fff;}
+.btn-primary:hover{background:#1d4ed8;transform:translateY(-1px);box-shadow:0 4px 20px #2563eb50;}
+.btn-ghost{background:transparent;color:var(--muted);border:1px solid var(--border2);}
+.btn-ghost:hover{background:var(--surface2);color:var(--text);}
+.btn-danger{background:var(--red-bg);color:var(--red);border:1px solid #f8717130;}
+.btn-danger:hover{background:#f8717125;}
+.btn-success{background:var(--green-bg);color:var(--green);border:1px solid #34d39930;}
+.btn-success:hover{background:#34d39925;}
+.btn-full{width:100%;}
+.btn-sm{padding:.4rem .9rem;font-size:.78rem;}
+.login-err{background:var(--red-bg);color:var(--red);border:1px solid #f8717130;border-radius:8px;padding:.65rem 1rem;font-size:.8rem;margin-top:.8rem;display:none;}
+
+/* ── APP SHELL ── */
+#app{display:none;min-height:100vh;}
+.layout{display:flex;min-height:100vh;}
+
+/* SIDEBAR */
+.sidebar{width:240px;background:var(--surface);border-right:1px solid var(--border);display:flex;flex-direction:column;position:fixed;top:0;left:0;bottom:0;z-index:100;}
+.sb-logo{padding:1.4rem 1.2rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.75rem;}
+.sb-logo-icon{width:34px;height:34px;border-radius:8px;background:var(--blue2);display:flex;align-items:center;justify-content:center;font-size:1rem;}
+.sb-logo h1{font-size:.95rem;font-weight:700;}
+.sb-logo p{font-size:.65rem;color:var(--muted);font-family:'DM Mono',monospace;}
+.sb-nav{flex:1;padding:.8rem 0;overflow-y:auto;}
+.sb-section{font-size:.62rem;font-weight:700;color:var(--muted2);letter-spacing:.2em;text-transform:uppercase;padding:.8rem 1.2rem .3rem;}
+.sb-item{display:flex;align-items:center;gap:.7rem;padding:.65rem 1.2rem;margin:.1rem .5rem;border-radius:8px;cursor:pointer;color:var(--muted);font-size:.82rem;font-weight:500;transition:all .15s;background:none;border:none;font-family:inherit;width:calc(100% - 1rem);text-align:left;}
+.sb-item:hover{background:var(--surface2);color:var(--text);}
+.sb-item.active{background:var(--blue-glow);color:var(--blue);border:1px solid #4f8ef720;}
+.sb-icon{font-size:1rem;width:18px;text-align:center;}
+.sb-badge{margin-left:auto;background:var(--blue2);color:#fff;font-size:.6rem;font-weight:700;padding:.15rem .45rem;border-radius:50px;}
+.sb-footer{padding:1rem 1.2rem;border-top:1px solid var(--border);}
+.sb-user{display:flex;align-items:center;gap:.6rem;}
+.sb-avatar{width:32px;height:32px;border-radius:50%;background:var(--blue2);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;flex-shrink:0;}
+.sb-user-info p{font-size:.78rem;font-weight:600;}
+.sb-user-info span{font-size:.65rem;color:var(--muted);}
+.sb-logout{margin-left:auto;background:none;border:none;color:var(--muted);cursor:pointer;font-size:.85rem;transition:color .2s;padding:.3rem;}
+.sb-logout:hover{color:var(--red);}
+
+/* MAIN */
+.main{margin-left:240px;flex:1;display:flex;flex-direction:column;}
+.topbar{background:var(--surface);border-bottom:1px solid var(--border);padding:.9rem 1.8rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:50;}
+.topbar-left h2{font-size:1rem;font-weight:700;}
+.topbar-left p{font-size:.72rem;color:var(--muted);margin-top:.1rem;}
+.topbar-right{display:flex;gap:.6rem;align-items:center;}
+.content{padding:1.8rem;flex:1;}
+.page{display:none;}
+.page.active{display:block;}
+
+/* STAT CARDS */
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:1.8rem;}
+.stat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.2rem 1.4rem;}
+.stat-card .label{font-size:.72rem;color:var(--muted);font-weight:500;text-transform:uppercase;letter-spacing:.06em;}
+.stat-card .val{font-size:1.6rem;font-weight:700;margin-top:.3rem;font-family:'DM Mono',monospace;}
+.stat-card .change{font-size:.72rem;margin-top:.3rem;color:var(--muted);}
+.c-green{color:var(--green);}
+.c-red{color:var(--red);}
+.c-blue{color:var(--blue);}
+.c-yellow{color:var(--yellow);}
+
+/* TABLE */
+.table-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+.table-header{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.4rem;border-bottom:1px solid var(--border);}
+.table-header h3{font-size:.9rem;font-weight:700;}
+.search-input{padding:.5rem .9rem;background:var(--surface2);border:1px solid var(--border2);border-radius:8px;color:var(--text);font-size:.8rem;outline:none;width:200px;font-family:inherit;}
+.search-input:focus{border-color:var(--blue);}
+table{width:100%;border-collapse:collapse;}
+th{text-align:left;font-size:.68rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;padding:.6rem 1.2rem;border-bottom:1px solid var(--border);background:var(--surface2);}
+td{padding:.85rem 1.2rem;border-bottom:1px solid var(--border);font-size:.82rem;vertical-align:middle;}
+tr:last-child td{border-bottom:none;}
+tr:hover td{background:#ffffff04;}
+.mono{font-family:'DM Mono',monospace;font-size:.75rem;}
+.pill{display:inline-flex;align-items:center;gap:.3rem;padding:.2rem .65rem;border-radius:50px;font-size:.68rem;font-weight:600;}
+.pill-green{background:var(--green-bg);color:var(--green);border:1px solid #34d39925;}
+.pill-red{background:var(--red-bg);color:var(--red);border:1px solid #f8717125;}
+.pill-blue{background:var(--blue-glow);color:var(--blue);border:1px solid #4f8ef725;}
+.pill-yellow{background:var(--yellow-bg);color:var(--yellow);border:1px solid #fbbf2425;}
+.pill-purple{background:var(--purple-bg);color:var(--purple);border:1px solid #a78bfa25;}
+.avatar-sm{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;color:#fff;flex-shrink:0;}
+.row-actions{display:flex;gap:.4rem;}
+
+/* MODAL */
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:500;display:flex;align-items:center;justify-content:center;padding:1rem;backdrop-filter:blur(4px);}
+.modal{background:var(--surface);border:1px solid var(--border2);border-radius:var(--radius-lg);padding:1.8rem;width:100%;max-width:520px;box-shadow:0 32px 80px rgba(0,0,0,.6);animation:slideUp .25s ease;max-height:90vh;overflow-y:auto;}
+.modal-lg{max-width:680px;}
+@keyframes slideUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+.modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.4rem;}
+.modal-head h3{font-size:1rem;font-weight:700;}
+.modal-close{background:none;border:none;color:var(--muted);cursor:pointer;font-size:1.1rem;padding:.3rem;transition:color .2s;}
+.modal-close:hover{color:var(--text);}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;}
+.span2{grid-column:1/-1;}
+.divider{height:1px;background:var(--border);margin:1.2rem 0;}
+.modal-footer{display:flex;gap:.7rem;justify-content:flex-end;margin-top:1.4rem;}
+
+/* TOAST */
+#toast-wrap{position:fixed;top:1.2rem;right:1.2rem;z-index:9999;display:flex;flex-direction:column;gap:.5rem;}
+.toast{padding:.75rem 1.1rem;border-radius:10px;font-size:.82rem;font-weight:500;display:flex;align-items:center;gap:.6rem;max-width:300px;animation:slideIn .25s ease;box-shadow:0 8px 32px rgba(0,0,0,.4);}
+.toast-success{background:#0d2418;border:1px solid #34d39940;color:var(--green);}
+.toast-error{background:#200f0f;border:1px solid #f8717140;color:var(--red);}
+.toast-info{background:#0d1428;border:1px solid #4f8ef740;color:var(--blue);}
+@keyframes slideIn{from{opacity:0;transform:translateX(16px);}to{opacity:1;transform:translateX(0);}}
+
+/* TABS */
+.tabs{display:flex;gap:.3rem;background:var(--surface2);border-radius:10px;padding:.25rem;margin-bottom:1.4rem;}
+.tab{flex:1;padding:.5rem;border:none;background:none;font-family:inherit;font-size:.78rem;font-weight:500;color:var(--muted);cursor:pointer;border-radius:8px;transition:all .15s;}
+.tab.active{background:var(--surface);color:var(--text);box-shadow:0 1px 4px rgba(0,0,0,.3);}
+
+/* ACCT MINI */
+.acct-mini{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:.9rem 1rem;margin-bottom:.6rem;display:flex;justify-content:space-between;align-items:center;}
+.acct-mini-left{display:flex;align-items:center;gap:.7rem;}
+.acct-dot{width:10px;height:10px;border-radius:50%;}
+
+/* EMPTY */
+.empty{text-align:center;padding:3rem;color:var(--muted);}
+.empty-icon{font-size:2.5rem;margin-bottom:.8rem;}
+.empty p{font-size:.875rem;}
+
+/* COLOR PICKER ROW */
+.color-row{display:flex;gap:.5rem;flex-wrap:wrap;}
+.color-swatch{width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid transparent;transition:all .15s;}
+.color-swatch.selected{border-color:#fff;transform:scale(1.15);}
+</style>
+</head>
+<body>
+<div id="toast-wrap"></div>
+
+<!-- ══ ADMIN LOGIN ══ -->
+<div id="admin-login">
+  <div class="login-box">
+    <div class="login-logo">
+      <div class="login-logo-icon">🏦</div>
+      <div><h1>Apex Bank</h1><p>ADMIN CONSOLE</p></div>
+    </div>
+    <h2>Admin Sign In</h2>
+    <p class="sub">Manage all bank accounts and users</p>
+    <div class="field"><label>Username</label><input type="text" id="adm-user" placeholder="admin" value="admin"/></div>
+    <div class="field"><label>Password</label><input type="password" id="adm-pass" placeholder="••••••"/></div>
+    <button class="btn btn-primary btn-full" style="margin-top:.4rem;" onclick="adminLogin()">Sign In →</button>
+    <div class="login-err" id="adm-err">Invalid credentials. Try admin / admin123</div>
+    <p style="font-size:.7rem;color:var(--muted2);text-align:center;margin-top:1.2rem;">Demo: <span style="color:var(--muted);font-family:'DM Mono',monospace;">admin</span> / <span style="color:var(--muted);font-family:'DM Mono',monospace;">admin123</span></p>
+  </div>
+</div>
+
+<!-- ══ APP ══ -->
+<div id="app">
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sb-logo">
+        <div class="sb-logo-icon">🏦</div>
+        <div><h1>Apex Admin</h1><p>CONTROL PANEL</p></div>
+      </div>
+      <nav class="sb-nav">
+        <div class="sb-section">Overview</div>
+        <button class="sb-item active" onclick="nav('dashboard',this)"><span class="sb-icon">📊</span>Dashboard</button>
+        <div class="sb-section">Management</div>
+        <button class="sb-item" onclick="nav('users',this)"><span class="sb-icon">👥</span>Users <span class="sb-badge" id="users-badge">0</span></button>
+        <button class="sb-item" onclick="nav('accounts',this)"><span class="sb-icon">💳</span>Bank Accounts</button>
+        <button class="sb-item" onclick="nav('transactions',this)"><span class="sb-icon">📋</span>Transactions</button>
+        <div class="sb-section">System</div>
+        <button class="sb-item" onclick="nav('settings',this)"><span class="sb-icon">⚙️</span>Settings</button>
+      </nav>
+      <div class="sb-footer">
+        <div class="sb-user">
+          <div class="sb-avatar">AD</div>
+          <div class="sb-user-info"><p>Administrator</p><span>Super Admin</span></div>
+          <button class="sb-logout" onclick="adminLogout()" title="Sign out">⏻</button>
+        </div>
+      </div>
+    </aside>
+
+    <div class="main">
+      <div class="topbar">
+        <div class="topbar-left"><h2 id="page-title">Dashboard</h2><p id="page-sub">Overview of all bank activity</p></div>
+        <div class="topbar-right">
+          <button class="btn btn-primary btn-sm" id="topbar-action" onclick="openCreateUser()">+ New User</button>
+        </div>
+      </div>
+      <div class="content">
+
+        <!-- DASHBOARD -->
+        <div class="page active" id="page-dashboard">
+          <div class="stat-grid" id="stat-grid"></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;">
+            <div class="table-wrap">
+              <div class="table-header"><h3>Recent Users</h3><button class="btn btn-ghost btn-sm" onclick="nav('users',null)">View All</button></div>
+              <div id="dash-users"></div>
+            </div>
+            <div class="table-wrap">
+              <div class="table-header"><h3>Recent Transactions</h3><button class="btn btn-ghost btn-sm" onclick="nav('transactions',null)">View All</button></div>
+              <div id="dash-txns"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- USERS -->
+        <div class="page" id="page-users">
+          <div class="table-wrap">
+            <div class="table-header">
+              <h3>All Users</h3>
+              <div style="display:flex;gap:.6rem;">
+                <input class="search-input" placeholder="🔍 Search users..." oninput="renderUsers(this.value)" id="user-search"/>
+                <button class="btn btn-primary btn-sm" onclick="openCreateUser()">+ New User</button>
+              </div>
+            </div>
+            <div id="users-table"></div>
+          </div>
+        </div>
+
+        <!-- ACCOUNTS -->
+        <div class="page" id="page-accounts">
+          <div class="table-wrap">
+            <div class="table-header">
+              <h3>All Bank Accounts</h3>
+              <input class="search-input" placeholder="🔍 Search accounts..." oninput="renderAccounts(this.value)"/>
+            </div>
+            <div id="accounts-table"></div>
+          </div>
+        </div>
+
+        <!-- TRANSACTIONS -->
+        <div class="page" id="page-transactions">
+          <div class="table-wrap">
+            <div class="table-header">
+              <h3>All Transactions</h3>
+              <input class="search-input" placeholder="🔍 Search..." oninput="renderAllTxns(this.value)"/>
+            </div>
+            <div id="txns-table"></div>
+          </div>
+        </div>
+
+        <!-- SETTINGS -->
+        <div class="page" id="page-settings">
+          <div style="max-width:500px;">
+            <div class="table-wrap" style="padding:1.4rem;margin-bottom:1.2rem;">
+              <h3 style="font-size:.9rem;font-weight:700;margin-bottom:1.2rem;">Admin Credentials</h3>
+              <div class="field"><label>Username</label><input type="text" id="set-user" value="admin"/></div>
+              <div class="field"><label>New Password</label><input type="password" id="set-pass" placeholder="Leave blank to keep current"/></div>
+              <button class="btn btn-primary btn-sm" onclick="saveSettings()">Save Changes</button>
+            </div>
+            <div class="table-wrap" style="padding:1.4rem;">
+              <h3 style="font-size:.9rem;font-weight:700;margin-bottom:.6rem;">Danger Zone</h3>
+              <p style="font-size:.78rem;color:var(--muted);margin-bottom:1rem;">Reset all data back to the default demo state.</p>
+              <button class="btn btn-danger btn-sm" onclick="resetAll()">🗑 Reset All Data</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ MODALS ══ -->
+
+<!-- Create/Edit User -->
+<div class="modal-bg hidden" id="modal-user">
+  <div class="modal modal-lg">
+    <div class="modal-head">
+      <h3 id="modal-user-title">Create New User</h3>
+      <button class="modal-close" onclick="closeModal('modal-user')">✕</button>
+    </div>
+    <div class="tabs">
+      <button class="tab active" onclick="switchTab('tab-profile',this)">Profile</button>
+      <button class="tab" onclick="switchTab('tab-accounts',this)">Bank Accounts</button>
+    </div>
+
+    <!-- Profile Tab -->
+    <div id="tab-profile">
+      <div class="form-grid">
+        <div class="field span2"><label>Full Name</label><input type="text" id="u-name" placeholder="e.g. Chidi Okonkwo"/></div>
+        <div class="field"><label>Email</label><input type="text" id="u-email" placeholder="chidi@email.com"/></div>
+        <div class="field"><label>Phone</label><input type="text" id="u-phone" placeholder="+234 800 000 0000"/></div>
+        <div class="field"><label>4-Digit PIN</label><input type="password" id="u-pin" placeholder="••••" maxlength="4" inputmode="numeric"/></div>
+        <div class="field"><label>Membership Tier</label>
+          <select id="u-tier">
+            <option>Standard Member</option>
+            <option>Silver Member</option>
+            <option>Gold Member</option>
+            <option>Platinum Member</option>
+            <option>Diamond Member</option>
+          </select>
+        </div>
+        <div class="field"><label>Status</label>
+          <select id="u-status">
+            <option value="active">Active</option>
+            <option value="suspended">Suspended</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Accounts Tab -->
+    <div id="tab-accounts" class="hidden">
+      <div id="acct-list-edit"></div>
+      <button class="btn btn-ghost btn-sm" onclick="addAccountRow()" style="margin-top:.6rem;">+ Add Account</button>
+      <div class="divider"></div>
+      <p style="font-size:.72rem;color:var(--muted);">Changes to accounts are applied when you save the user.</p>
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeModal('modal-user')">Cancel</button>
+      <button class="btn btn-primary" onclick="saveUser()">Save User</button>
+    </div>
+  </div>
+</div>
+
+<!-- View User Detail -->
+<div class="modal-bg hidden" id="modal-view">
+  <div class="modal modal-lg">
+    <div class="modal-head">
+      <h3 id="modal-view-title">User Detail</h3>
+      <button class="modal-close" onclick="closeModal('modal-view')">✕</button>
+    </div>
+    <div id="modal-view-body"></div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeModal('modal-view')">Close</button>
+      <button class="btn btn-primary" id="modal-view-edit-btn">Edit User</button>
+    </div>
+  </div>
+</div>
+
+<!-- Confirm Delete -->
+<div class="modal-bg hidden" id="modal-confirm">
+  <div class="modal" style="max-width:380px;">
+    <div class="modal-head"><h3>Confirm Delete</h3><button class="modal-close" onclick="closeModal('modal-confirm')">✕</button></div>
+    <p id="confirm-msg" style="font-size:.875rem;color:var(--muted);line-height:1.5;"></p>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeModal('modal-confirm')">Cancel</button>
+      <button class="btn btn-danger" id="confirm-ok">Delete</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ══════════════════════════════════════════
+//  DATA STORE
+// ══════════════════════════════════════════
+const AKEY = 'apexadmin_v1';
+const BKEY = 'apexbank_v2'; // shared with customer app
+
+const ADMIN_DEFAULT = { user: 'admin', pass: 'admin123' };
+
+const DEFAULT_DATA = {
+  admin: { ...ADMIN_DEFAULT },
+  users: [
+    {
+      id: 'USR-001', name: 'Emeka Okafor', email: 'emeka.okafor@email.com',
+      phone: '+234 801 234 5678', avatar: 'EO', joinDate: '2021-03-15',
+      pin: '1234', tier: 'Gold Member', status: 'active',
+      accounts: [
+        { id: 'ACC-001', type: 'Current Account', number: '0123456789', balance: 847500,  currency: '₦', color: '#1a56db', icon: '💳' },
+        { id: 'ACC-002', type: 'Savings Account', number: '9876543210', balance: 2340000, currency: '₦', color: '#0e9f6e', icon: '🏦' },
+        { id: 'ACC-003', type: 'Dollar Account',  number: '1122334455', balance: 3850,    currency: '$', color: '#7e3af2', icon: '🌐' }
+      ],
+      transactions: [
+        {id:'T01',date:'2025-05-24',desc:'Salary — MTN Nigeria',type:'credit',amount:450000,account:'ACC-001',category:'Income',ref:'SAL-0524',status:'success'},
+        {id:'T02',date:'2025-05-23',desc:'Shoprite Ikeja Mall',type:'debit',amount:18750,account:'ACC-001',category:'Shopping',ref:'POS-7823',status:'success'},
+        {id:'T03',date:'2025-05-22',desc:'Transfer to Savings',type:'debit',amount:100000,account:'ACC-001',category:'Transfer',ref:'TRF-4421',status:'success'},
+        {id:'T05',date:'2025-05-21',desc:'DSTV Subscription',type:'debit',amount:29500,account:'ACC-001',category:'Bills',ref:'BIL-1120',status:'success'},
+        {id:'T10',date:'2025-05-16',desc:'Interest Credit',type:'credit',amount:12340,account:'ACC-002',category:'Interest',ref:'INT-0516',status:'success'}
+      ]
+    }
+  ]
+};
+
+function getAdminData() { return JSON.parse(localStorage.getItem(AKEY)) || DEFAULT_DATA; }
+function saveAdminData(d) { localStorage.setItem(AKEY, JSON.stringify(d)); syncBankApp(); }
+function initAdminData() { if (!localStorage.getItem(AKEY)) saveAdminData(DEFAULT_DATA); }
+
+// Sync first user to the customer-facing bank app
+function syncBankApp() {
+  const d = getAdminData();
+  if (!d.users.length) return;
+  // Write each user's data so customer app can read by switching
+  // For simplicity, write all users; customer app reads by userId from sessionStorage
+  localStorage.setItem('apexbank_users', JSON.stringify(d.users));
+}
+
+function initData() {
+  initAdminData();
+  // Also init the bank app storage with first user if empty
+  const d = getAdminData();
+  if (d.users.length) {
+    const u = d.users[0];
+    if (!localStorage.getItem(BKEY)) {
+      localStorage.setItem(BKEY, JSON.stringify({ user: u, accounts: u.accounts, transactions: u.transactions }));
+    }
+  }
+}
+
+// ── AUTH ──────────────────────────────────
+function adminLogin() {
+  const u = document.getElementById('adm-user').value.trim();
+  const p = document.getElementById('adm-pass').value;
+  const d = getAdminData();
+  if (u === d.admin.user && p === d.admin.pass) {
+    sessionStorage.setItem('apex_admin', '1');
+    document.getElementById('admin-login').style.display = 'none';
+    document.getElementById('app').style.display = 'block';
+    bootApp();
+  } else {
+    document.getElementById('adm-err').style.display = 'block';
+    setTimeout(() => document.getElementById('adm-err').style.display = 'none', 3000);
+  }
+}
+document.getElementById('adm-pass').addEventListener('keydown', e => { if (e.key === 'Enter') adminLogin(); });
+
+function adminLogout() {
+  sessionStorage.removeItem('apex_admin');
+  document.getElementById('app').style.display = 'none';
+  document.getElementById('admin-login').style.display = 'flex';
+  document.getElementById('adm-pass').value = '';
+}
+
+// ── BOOT ──────────────────────────────────
+function bootApp() {
+  renderStats();
+  renderDashUsers();
+  renderDashTxns();
+  renderUsers();
+  renderAccounts();
+  renderAllTxns();
+  updateBadge();
+}
+
+function updateBadge() {
+  document.getElementById('users-badge').textContent = getAdminData().users.length;
+}
+
+// ── NAVIGATION ────────────────────────────
+const PAGE_META = {
+  dashboard:    { title: 'Dashboard',     sub: 'Overview of all bank activity',      action: '+ New User' },
+  users:        { title: 'Users',         sub: 'Manage customer accounts',           action: '+ New User' },
+  accounts:     { title: 'Bank Accounts', sub: 'All accounts across all users',      action: null },
+  transactions: { title: 'Transactions',  sub: 'All transactions across all users',  action: null },
+  settings:     { title: 'Settings',      sub: 'Admin configuration',               action: null },
+};
+
+function nav(id, btn) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.sb-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  if (btn) btn.classList.add('active');
+  else document.querySelectorAll('.sb-item').forEach(b => { if (b.textContent.trim().startsWith(PAGE_META[id]?.title?.split(' ')[0])) b.classList.add('active'); });
+  const m = PAGE_META[id];
+  document.getElementById('page-title').textContent = m.title;
+  document.getElementById('page-sub').textContent = m.sub;
+  const ta = document.getElementById('topbar-action');
+  if (m.action) { ta.textContent = m.action; ta.style.display = 'inline-flex'; ta.onclick = openCreateUser; }
+  else ta.style.display = 'none';
+}
+
+// ── STATS ─────────────────────────────────
+function renderStats() {
+  const { users } = getAdminData();
+  const allAccounts = users.flatMap(u => u.accounts);
+  const allTxns = users.flatMap(u => u.transactions);
+  const totalBal = allAccounts.filter(a => a.currency === '₦').reduce((s, a) => s + a.balance, 0);
+  const totalTxns = allTxns.length;
+  const activeUsers = users.filter(u => u.status === 'active').length;
+  const totalAccounts = allAccounts.length;
+
+  document.getElementById('stat-grid').innerHTML = [
+    { label: 'Total Users',     val: users.length,                        change: `${activeUsers} active`,                   cls: 'c-blue',   icon: '👥' },
+    { label: 'Bank Accounts',   val: totalAccounts,                       change: `across ${users.length} users`,            cls: 'c-purple', icon: '💳' },
+    { label: 'Total Deposits',  val: '₦' + fmt(totalBal),                 change: 'NGN accounts only',                       cls: 'c-green',  icon: '💰' },
+    { label: 'Transactions',    val: totalTxns,                           change: 'all time',                                cls: 'c-yellow', icon: '📋' },
+  ].map(s => `
+    <div class="stat-card">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+        <div>
+          <div class="label">${s.label}</div>
+          <div class="val ${s.cls}">${s.val}</div>
+          <div class="change">${s.change}</div>
+        </div>
+        <div style="font-size:1.4rem;opacity:.4;">${s.icon}</div>
+      </div>
+    </div>`).join('');
+}
+
+// ── DASHBOARD WIDGETS ─────────────────────
+function renderDashUsers() {
+  const { users } = getAdminData();
+  const rows = users.slice(0, 5).map(u => `
+    <tr>
+      <td><div style="display:flex;align-items:center;gap:.7rem;">
+        <div class="avatar-sm" style="background:${strColor(u.name)};">${u.avatar}</div>
+        <div><div style="font-weight:600;font-size:.82rem;">${u.name}</div><div class="mono" style="color:var(--muted);">${u.id}</div></div>
+      </div></td>
+      <td><span class="pill ${u.status==='active'?'pill-green':'pill-red'}">${u.status}</span></td>
+      <td><button class="btn btn-ghost btn-sm" onclick="openViewUser('${u.id}')">View</button></td>
+    </tr>`).join('');
+  document.getElementById('dash-users').innerHTML = `<table><thead><tr><th>User</th><th>Status</th><th></th></tr></thead><tbody>${rows||'<tr><td colspan="3" class="empty">No users</td></tr>'}</tbody></table>`;
+}
+
+function renderDashTxns() {
+  const { users } = getAdminData();
+  const txns = users.flatMap(u => u.transactions.map(t => ({ ...t, userName: u.name }))).sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 6);
+  const rows = txns.map(t => `
+    <tr>
+      <td><div style="font-weight:500;font-size:.78rem;">${t.desc}</div><div class="mono" style="color:var(--muted);font-size:.68rem;">${t.userName}</div></td>
+      <td class="${t.type==='credit'?'c-green':'c-red'}" style="font-family:'DM Mono',monospace;font-size:.78rem;">${t.type==='credit'?'+':'-'}₦${t.amount.toLocaleString()}</td>
+    </tr>`).join('');
+  document.getElementById('dash-txns').innerHTML = `<table><thead><tr><th>Description</th><th>Amount</th></tr></thead><tbody>${rows||'<tr><td colspan="2" class="empty">No transactions</td></tr>'}</tbody></table>`;
+}
+
+// ── USERS TABLE ───────────────────────────
+function renderUsers(search = '') {
+  const { users } = getAdminData();
+  const q = search.toLowerCase();
+  const filtered = users.filter(u => !q || u.name.toLowerCase().includes(q) || u.email.toLowerCase().includes(q) || u.id.toLowerCase().includes(q));
+
+  const rows = filtered.map(u => `
+    <tr>
+      <td><div style="display:flex;align-items:center;gap:.8rem;">
+        <div class="avatar-sm" style="background:${strColor(u.name)};">${u.avatar}</div>
+        <div><div style="font-weight:600;">${u.name}</div><div style="font-size:.72rem;color:var(--muted);">${u.email}</div></div>
+      </div></td>
+      <td class="mono">${u.id}</td>
+      <td><span class="pill pill-purple">${u.tier}</span></td>
+      <td><span class="pill ${u.status==='active'?'pill-green':'pill-red'}">${u.status}</span></td>
+      <td class="mono">${u.accounts.length} acct${u.accounts.length!==1?'s':''}</td>
+      <td>${fmtDate(u.joinDate)}</td>
+      <td>
+        <div class="row-actions">
+          <button class="btn btn-ghost btn-sm" onclick="openViewUser('${u.id}')">View</button>
+          <button class="btn btn-ghost btn-sm" onclick="openEditUser('${u.id}')">Edit</button>
+          <button class="btn btn-danger btn-sm" onclick="confirmDelete('${u.id}')">Delete</button>
+        </div>
+      </td>
+    </tr>`).join('');
+
+  document.getElementById('users-table').innerHTML = filtered.length
+    ? `<table><thead><tr><th>User</th><th>ID</th><th>Tier</th><th>Status</th><th>Accounts</th><th>Joined</th><th>Actions</th></tr></thead><tbody>${rows}</tbody></table>`
+    : `<div class="empty"><div class="empty-icon">👥</div><p>No users found</p></div>`;
+  updateBadge();
+}
+
+// ── ACCOUNTS TABLE ────────────────────────
+function renderAccounts(search = '') {
+  const { users } = getAdminData();
+  const q = search.toLowerCase();
+  const all = users.flatMap(u => u.accounts.map(a => ({ ...a, userName: u.name, userId: u.id })));
+  const filtered = all.filter(a => !q || a.type.toLowerCase().includes(q) || a.number.includes(q) || a.userName.toLowerCase().includes(q));
+
+  const rows = filtered.map(a => `
+    <tr>
+      <td><div style="font-weight:600;font-size:.82rem;">${a.type}</div></td>
+      <td class="mono">${a.number}</td>
+      <td><div style="display:flex;align-items:center;gap:.5rem;"><div style="width:10px;height:10px;border-radius:50%;background:${a.color};"></div>${a.userName}</div></td>
+      <td class="mono" style="color:var(--green);font-weight:600;">${a.currency}${a.balance.toLocaleString('en-NG',{minimumFractionDigits:2})}</td>
+      <td><span class="pill pill-green">Active</span></td>
+      <td><button class="btn btn-ghost btn-sm" onclick="openEditUser('${a.userId}')">Edit User</button></td>
+    </tr>`).join('');
+
+  document.getElementById('accounts-table').innerHTML = filtered.length
+    ? `<table><thead><tr><th>Type</th><th>Number</th><th>Owner</th><th>Balance</th><th>Status</th><th></th></tr></thead><tbody>${rows}</tbody></table>`
+    : `<div class="empty"><div class="empty-icon">💳</div><p>No accounts found</p></div>`;
+}
+
+// ── TRANSACTIONS TABLE ────────────────────
+function renderAllTxns(search = '') {
+  const { users } = getAdminData();
+  const q = search.toLowerCase();
+  const all = users.flatMap(u => u.transactions.map(t => ({ ...t, userName: u.name, userId: u.id }))).sort((a, b) => new Date(b.date) - new Date(a.date));
+  const filtered = all.filter(t => !q || t.desc.toLowerCase().includes(q) || t.ref.toLowerCase().includes(q) || t.userName.toLowerCase().includes(q));
+
+  const rows = filtered.map(t => `
+    <tr>
+      <td><div style="font-weight:500;">${t.desc}</div><div class="mono" style="color:var(--muted);font-size:.68rem;">${t.ref}</div></td>
+      <td style="font-size:.75rem;color:var(--muted);">${fmtDate(t.date)}</td>
+      <td style="font-size:.75rem;">${t.userName}</td>
+      <td><span class="pill pill-blue" style="font-size:.65rem;">${t.category}</span></td>
+      <td class="${t.type==='credit'?'c-green':'c-red'} mono" style="font-weight:600;">${t.type==='credit'?'+':'-'}${t.amount.toLocaleString('en-NG',{minimumFractionDigits:2})}</td>
+      <td><span class="pill pill-green" style="font-size:.65rem;">✓ success</span></td>
+    </tr>`).join('');
+
+  document.getElementById('txns-table').innerHTML = filtered.length
+    ? `<table><thead><tr><th>Description</th><th>Date</th><th>User</th><th>Category</th><th>Amount</th><th>Status</th></tr></thead><tbody>${rows}</tbody></table>`
+    : `<div class="empty"><div class="empty-icon">📋</div><p>No transactions found</p></div>`;
+}
+
+// ── VIEW USER ─────────────────────────────
+function openViewUser(id) {
+  const { users } = getAdminData();
+  const u = users.find(x => x.id === id);
+  document.getElementById('modal-view-title').textContent = u.name;
+  document.getElementById('modal-view-edit-btn').onclick = () => { closeModal('modal-view'); openEditUser(id); };
+
+  const totalBal = u.accounts.filter(a => a.currency === '₦').reduce((s, a) => s + a.balance, 0);
+  document.getElementById('modal-view-body').innerHTML = `
+    <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.2rem;">
+      <div class="avatar-sm" style="background:${strColor(u.name)};width:52px;height:52px;font-size:1rem;">${u.avatar}</div>
+      <div>
+        <div style="font-size:1.1rem;font-weight:700;">${u.name}</div>
+        <div style="font-size:.75rem;color:var(--muted);">${u.email} · ${u.phone}</div>
+        <div style="margin-top:.4rem;display:flex;gap:.4rem;">
+          <span class="pill pill-purple">${u.tier}</span>
+          <span class="pill ${u.status==='active'?'pill-green':'pill-red'}">${u.status}</span>
+        </div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-bottom:1.2rem;">
+      ${[['User ID',u.id],['PIN','••••'],['Joined',fmtDate(u.joinDate)],['Total NGN Balance','₦'+fmt(totalBal)]].map(([l,v])=>`
+        <div style="background:var(--surface2);border-radius:8px;padding:.75rem;">
+          <div style="font-size:.65rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.08em;">${l}</div>
+          <div style="font-size:.875rem;font-weight:600;margin-top:.2rem;font-family:'DM Mono',monospace;">${v}</div>
+        </div>`).join('')}
+    </div>
+    <div style="font-size:.78rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.6rem;">Bank Accounts (${u.accounts.length})</div>
+    ${u.accounts.map(a=>`
+      <div class="acct-mini">
+        <div class="acct-mini-left">
+          <div class="acct-dot" style="background:${a.color};"></div>
+          <div>
+            <div style="font-size:.8rem;font-weight:600;">${a.type}</div>
+            <div class="mono" style="color:var(--muted);font-size:.7rem;">${a.number}</div>
+          </div>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-family:'DM Mono',monospace;font-size:.875rem;font-weight:600;color:var(--green);">${a.currency}${a.balance.toLocaleString('en-NG',{minimumFractionDigits:2})}</div>
+        </div>
+      </div>`).join('')}
+    <div style="font-size:.78rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin:1rem 0 .6rem;">Recent Transactions (${u.transactions.length})</div>
+    ${u.transactions.slice(0,5).map(t=>`
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:.6rem 0;border-bottom:1px solid var(--border);">
+        <div><div style="font-size:.78rem;font-weight:500;">${t.desc}</div><div class="mono" style="font-size:.65rem;color:var(--muted);">${t.ref} · ${fmtDate(t.date)}</div></div>
+        <div class="${t.type==='credit'?'c-green':'c-red'}" style="font-family:'DM Mono',monospace;font-size:.78rem;font-weight:600;">${t.type==='credit'?'+':'-'}${t.amount.toLocaleString()}</div>
+      </div>`).join('')}`;
+  document.getElementById('modal-view').classList.remove('hidden');
+}
+
+// ── CREATE / EDIT USER ────────────────────
+let editingUserId = null;
+let editingAccounts = [];
+
+function openCreateUser() {
+  editingUserId = null;
+  editingAccounts = [
+    { id: 'ACC-' + randId(), type: 'Current Account', number: randAccNum(), balance: 0, currency: '₦', color: '#1a56db', icon: '💳' }
+  ];
+  document.getElementById('modal-user-title').textContent = 'Create New User';
+  clearUserForm();
+  renderAcctEditor();
+  document.getElementById('modal-user').classList.remove('hidden');
+  switchTab('tab-profile', document.querySelector('.tab'));
+}
+
+function openEditUser(id) {
+  const { users } = getAdminData();
+  const u = users.find(x => x.id === id);
+  editingUserId = id;
+  editingAccounts = JSON.parse(JSON.stringify(u.accounts));
+  document.getElementById('modal-user-title').textContent = 'Edit User — ' + u.name;
+  document.getElementById('u-name').value  = u.name;
+  document.getElementById('u-email').value = u.email;
+  document.getElementById('u-phone').value = u.phone;
+  document.getElementById('u-pin').value   = u.pin;
+  document.getElementById('u-tier').value  = u.tier;
+  document.getElementById('u-status').value = u.status;
+  renderAcctEditor();
+  document.getElementById('modal-user').classList.remove('hidden');
+  switchTab('tab-profile', document.querySelector('.tab'));
+}
+
+function clearUserForm() {
+  ['u-name','u-email','u-phone','u-pin'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('u-tier').value = 'Standard Member';
+  document.getElementById('u-status').value = 'active';
+}
+
+function saveUser() {
+  const name  = document.getElementById('u-name').value.trim();
+  const email = document.getElementById('u-email').value.trim();
+  const phone = document.getElementById('u-phone').value.trim();
+  const pin   = document.getElementById('u-pin').value.trim();
+  const tier  = document.getElementById('u-tier').value;
+  const status = document.getElementById('u-status').value;
+
+  if (!name)  return toast('Enter full name', 'error');
+  if (!email) return toast('Enter email', 'error');
+  if (!pin || pin.length !== 4 || isNaN(pin)) return toast('PIN must be 4 digits', 'error');
+  if (!editingAccounts.length) return toast('Add at least one bank account', 'error');
+
+  const d = getAdminData();
+  const initials = name.split(' ').map(w => w[0]).join('').toUpperCase().slice(0, 2);
+
+  if (editingUserId) {
+    const idx = d.users.findIndex(u => u.id === editingUserId);
+    const existing = d.users[idx];
+    d.users[idx] = { ...existing, name, email, phone, pin, tier, status, avatar: initials, accounts: editingAccounts };
+    toast('User updated!', 'success');
+  } else {
+    const newUser = {
+      id: 'USR-' + randId(), name, email, phone, pin, tier, status,
+      avatar: initials, joinDate: new Date().toISOString().split('T')[0],
+      accounts: editingAccounts, transactions: []
+    };
+    d.users.push(newUser);
+    toast('User created! They can now log in with the customer app using PIN: ' + pin, 'success');
+  }
+
+  saveAdminData(d);
+  closeModal('modal-user');
+  bootApp();
+}
+
+// ── ACCOUNT EDITOR ────────────────────────
+const ACCT_TYPES = ['Current Account','Savings Account','Dollar Account','Fixed Deposit','Investment Account'];
+const ACCT_COLORS = ['#1a56db','#0e9f6e','#7e3af2','#e02424','#f59e0b','#06b6d4','#ec4899'];
+const ACCT_ICONS  = ['💳','🏦','🌐','💰','📈','🏧','💎'];
+const CURRENCIES  = ['₦','$','€','£'];
+
+function renderAcctEditor() {
+  document.getElementById('acct-list-edit').innerHTML = editingAccounts.map((a, i) => `
+    <div style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:1rem;margin-bottom:.7rem;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.8rem;">
+        <div style="font-size:.78rem;font-weight:700;color:var(--muted);">Account ${i+1}</div>
+        <button class="btn btn-danger btn-sm" onclick="removeAcct(${i})">Remove</button>
+      </div>
+      <div class="form-grid">
+        <div class="field">
+          <label>Account Type</label>
+          <select onchange="updateAcct(${i},'type',this.value)">
+            ${ACCT_TYPES.map(t=>`<option ${a.type===t?'selected':''}>${t}</option>`).join('')}
+          </select>
+        </div>
+        <div class="field">
+          <label>Currency</label>
+          <select onchange="updateAcct(${i},'currency',this.value)">
+            ${CURRENCIES.map(c=>`<option ${a.currency===c?'selected':''}>${c}</option>`).join('')}
+          </select>
+        </div>
+        <div class="field">
+          <label>Account Number</label>
+          <input type="text" value="${a.number}" maxlength="10" oninput="updateAcct(${i},'number',this.value)" placeholder="10 digits"/>
+        </div>
+        <div class="field">
+          <label>Balance</label>
+          <input type="number" value="${a.balance}" oninput="updateAcct(${i},'balance',parseFloat(this.value)||0)" placeholder="0.00"/>
+        </div>
+        <div class="field span2">
+          <label>Card Color</label>
+          <div class="color-row">
+            ${ACCT_COLORS.map(c=>`<div class="color-swatch ${a.color===c?'selected':''}" style="background:${c};" onclick="updateAcct(${i},'color','${c}');renderAcctEditor();"></div>`).join('')}
+          </div>
+        </div>
+        <div class="field span2">
+          <label>Icon</label>
+          <div style="display:flex;gap:.4rem;">
+            ${ACCT_ICONS.map(ic=>`<button onclick="updateAcct(${i},'icon','${ic}');renderAcctEditor();" style="width:36px;height:36px;border-radius:8px;border:2px solid ${a.icon===ic?'var(--blue)':'var(--border)'};background:var(--surface);cursor:pointer;font-size:1.1rem;">${ic}</button>`).join('')}
+          </div>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+function updateAcct(i, key, val) { editingAccounts[i][key] = val; }
+function removeAcct(i) { editingAccounts.splice(i, 1); renderAcctEditor(); }
+function addAccountRow() {
+  editingAccounts.push({ id: 'ACC-' + randId(), type: 'Savings Account', number: randAccNum(), balance: 0, currency: '₦', color: '#0e9f6e', icon: '🏦' });
+  renderAcctEditor();
+}
+
+// ── DELETE USER ───────────────────────────
+function confirmDelete(id) {
+  const { users } = getAdminData();
+  const u = users.find(x => x.id === id);
+  document.getElementById('confirm-msg').textContent = `Are you sure you want to delete "${u.name}"? This will remove all their accounts and transactions.`;
+  document.getElementById('confirm-ok').onclick = () => { deleteUser(id); closeModal('modal-confirm'); };
+  document.getElementById('modal-confirm').classList.remove('hidden');
+}
+
+function deleteUser(id) {
+  const d = getAdminData();
+  d.users = d.users.filter(u => u.id !== id);
+  saveAdminData(d);
+  toast('User deleted', 'info');
+  bootApp();
+}
+
+// ── SETTINGS ─────────────────────────────
+function saveSettings() {
+  const u = document.getElementById('set-user').value.trim();
+  const p = document.getElementById('set-pass').value;
+  if (!u) return toast('Enter a username', 'error');
+  const d = getAdminData();
+  d.admin.user = u;
+  if (p) d.admin.pass = p;
+  saveAdminData(d);
+  toast('Settings saved!', 'success');
+}
+
+function resetAll() {
+  if (!confirm('Reset ALL data to default? This cannot be undone.')) return;
+  localStorage.removeItem(AKEY);
+  localStorage.removeItem(BKEY);
+  localStorage.removeItem('apexbank_users');
+  initData();
+  toast('All data reset!', 'info');
+  setTimeout(() => location.reload(), 1200);
+}
+
+// ── TABS ──────────────────────────────────
+function switchTab(id, btn) {
+  ['tab-profile','tab-accounts'].forEach(t => document.getElementById(t).classList.add('hidden'));
+  document.getElementById(id).classList.remove('hidden');
+  document.querySelectorAll('#modal-user .tab').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+}
+
+// ── MODALS ────────────────────────────────
+function closeModal(id) { document.getElementById(id).classList.add('hidden'); }
+document.querySelectorAll('.modal-bg').forEach(m => m.addEventListener('click', e => { if (e.target === m) m.classList.add('hidden'); }));
+
+// ── TOAST ─────────────────────────────────
+function toast(msg, type = 'info') {
+  const icons = { success: '✓', error: '✕', info: 'ℹ' };
+  const el = document.createElement('div');
+  el.className = `toast toast-${type}`;
+  el.innerHTML = `<span>${icons[type]}</span> ${msg}`;
+  document.getElementById('toast-wrap').appendChild(el);
+  setTimeout(() => el.remove(), 5000);
+}
+
+// ── HELPERS ───────────────────────────────
+function fmt(n) { return n.toLocaleString('en-NG', { minimumFractionDigits: 0 }); }
+function fmtDate(s) { return new Date(s).toLocaleDateString('en-NG', { day: 'numeric', month: 'short', year: 'numeric' }); }
+function randId() { return Math.random().toString(36).slice(2, 7).toUpperCase(); }
+function randAccNum() { return String(Math.floor(Math.random() * 9000000000 + 1000000000)); }
+function strColor(s) {
+  const colors = ['#1a56db','#0e9f6e','#7e3af2','#e02424','#f59e0b','#06b6d4','#ec4899','#84cc16'];
+  let h = 0; for (let c of s) h = (h * 31 + c.charCodeAt(0)) & 0xffffffff;
+  return colors[Math.abs(h) % colors.length];
+}
+
+// ── BOOT ──────────────────────────────────
+initData();
+if (sessionStorage.getItem('apex_admin') === '1') {
+  document.getElementById('admin-login').style.display = 'none';
+  document.getElementById('app').style.display = 'block';
+  bootApp();
+}
+</script>
+</body>
+</html>

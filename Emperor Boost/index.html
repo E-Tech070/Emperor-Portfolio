@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="Emperor Boost — Nigeria's #1 WhatsApp link promotion service. Get your business, link or service seen by thousands instantly."/>
+<title>Emperor Boost | WhatsApp Link Promotion Service</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- SCROLL PROGRESS BAR -->
+<div id="scroll-progress-bar"></div>
+
+<!-- TOAST NOTIFICATION -->
+<div class="toast" id="toast"></div>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobile-nav">
+  <a href="#how" onclick="closeMobileNav()">How It Works</a>
+  <a href="#pricing" onclick="closeMobileNav()">Pricing</a>
+  <a href="#order" onclick="closeMobileNav()">Order Now</a>
+  <a href="#contact" onclick="closeMobileNav()">Contact</a>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-logo">
+    <div class="logo-dot"></div>
+    Emperor<span>Boost</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <button class="header-cta" onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})">Order Now</button>
+  <button class="hamburger" id="hamburger" onclick="toggleMobileNav()">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <!-- Animated grid background -->
+  <div class="hero-grid-bg" aria-hidden="true"></div>
+  <!-- Floating orbs -->
+  <div class="orb orb-1" aria-hidden="true"></div>
+  <div class="orb orb-2" aria-hidden="true"></div>
+
+  <div class="hero-eyebrow">Nigeria's #1 WhatsApp Promotion Service</div>
+  <h1 class="hero-title">
+    Get Your Business<br/>
+    <span class="accent">Seen. Fast.</span>
+  </h1>
+  <p class="hero-sub">We broadcast your link, business, or service to thousands of active WhatsApp contacts instantly. More views. More customers. More sales.</p>
+  <div class="hero-actions">
+    <button class="btn-primary" onclick="document.getElementById('order').scrollIntoView({behavior:'smooth'})">
+      🚀 Boost My Link Now
+    </button>
+    <button class="btn-secondary" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">
+      View Packages →
+    </button>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <span class="hero-stat-num" data-target="10000" data-suffix="K+">10K+</span>
+      <span class="hero-stat-label">Active Contacts</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num" data-target="500" data-suffix="+">500+</span>
+      <span class="hero-stat-label">Links Promoted</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num" data-target="98" data-suffix="%">98%</span>
+      <span class="hero-stat-label">Satisfied Clients</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">24h</span>
+      <span class="hero-stat-label">Fast Delivery</span>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER STRIP -->
+<div class="ticker-wrap" aria-hidden="true">
+  <div class="ticker-track">
+    <span>🚀 Fast Delivery</span>
+    <span>✅ Real Nigerian Contacts</span>
+    <span>💬 24/7 WhatsApp Support</span>
+    <span>🔥 500+ Happy Clients</span>
+    <span>⚡ Orders from ₦500</span>
+    <span>👑 VIP Plans Available</span>
+    <span>🎯 Targeted Audience</span>
+    <span>🔒 Safe & Trusted</span>
+    <span>🚀 Fast Delivery</span>
+    <span>✅ Real Nigerian Contacts</span>
+    <span>💬 24/7 WhatsApp Support</span>
+    <span>🔥 500+ Happy Clients</span>
+    <span>⚡ Orders from ₦500</span>
+    <span>👑 VIP Plans Available</span>
+    <span>🎯 Targeted Audience</span>
+    <span>🔒 Safe & Trusted</span>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="text-center reveal">
+    <div class="section-label">Simple Process</div>
+    <h2 class="section-title">How It Works</h2>
+    <p class="section-sub">Get your link in front of thousands in just 3 easy steps.</p>
+  </div>
+  <div class="how-grid">
+    <div class="how-card reveal" style="--delay:0.1s">
+      <span class="how-num">01</span>
+      <div class="how-icon">📋</div>
+      <h3>Submit Your Order</h3>
+      <p>Fill out our simple order form with your link, business details, and choose your preferred package.</p>
+    </div>
+    <div class="how-card reveal" style="--delay:0.2s">
+      <span class="how-num">02</span>
+      <div class="how-icon">💳</div>
+      <h3>Make Payment</h3>
+      <p>Pay via bank transfer to our account. Send your payment proof on WhatsApp to confirm your order.</p>
+    </div>
+    <div class="how-card reveal" style="--delay:0.3s">
+      <span class="how-num">03</span>
+      <div class="how-icon">🚀</div>
+      <h3>We Broadcast</h3>
+      <p>Your link gets posted to our WhatsApp network of active contacts within 24 hours of payment confirmation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="text-center reveal">
+    <div class="section-label">Packages</div>
+    <h2 class="section-title">Choose Your Plan</h2>
+    <p class="section-sub">Affordable packages for every budget. Pay once, reach thousands.</p>
+  </div>
+  <div class="pricing-grid">
+    <div class="pricing-card reveal" style="--delay:0.1s">
+      <div class="pricing-icon">⚡</div>
+      <div class="pricing-name">Starter</div>
+      <div class="pricing-price">₦500</div>
+      <div class="pricing-period">One-time post</div>
+      <div class="pricing-divider"></div>
+      <ul class="pricing-features">
+        <li>Posted once to 1 WhatsApp group</li>
+        <li>Up to 500 contacts reached</li>
+        <li>Delivered within 24 hours</li>
+        <li>Basic post format</li>
+      </ul>
+      <button class="btn-plan btn-plan-outline" onclick="selectPlan('Starter - ₦500')">Get Started</button>
+    </div>
+    <div class="pricing-card reveal" style="--delay:0.2s">
+      <div class="pricing-icon">🔥</div>
+      <div class="pricing-name">Standard</div>
+      <div class="pricing-price">₦1,500</div>
+      <div class="pricing-period">Multi-group post</div>
+      <div class="pricing-divider"></div>
+      <ul class="pricing-features">
+        <li>Posted to 5 WhatsApp groups</li>
+        <li>Up to 2,500 contacts reached</li>
+        <li>Delivered within 12 hours</li>
+        <li>Custom caption included</li>
+      </ul>
+      <button class="btn-plan btn-plan-outline" onclick="selectPlan('Standard - ₦1,500')">Get Started</button>
+    </div>
+    <div class="pricing-card popular reveal" style="--delay:0.3s">
+      <span class="popular-tag">Most Popular</span>
+      <div class="pricing-icon">💎</div>
+      <div class="pricing-name">Premium</div>
+      <div class="pricing-price">₦3,000</div>
+      <div class="pricing-period">3-day campaign</div>
+      <div class="pricing-divider"></div>
+      <ul class="pricing-features">
+        <li>Posted daily for 3 days</li>
+        <li>Up to 10,000 contacts reached</li>
+        <li>Priority delivery within 6 hours</li>
+        <li>Custom designed post</li>
+        <li>WhatsApp status promotion</li>
+      </ul>
+      <button class="btn-plan btn-plan-filled" onclick="selectPlan('Premium - ₦3,000')">Get Started</button>
+    </div>
+    <div class="pricing-card reveal" style="--delay:0.4s">
+      <div class="pricing-icon">👑</div>
+      <div class="pricing-name">VIP</div>
+      <div class="pricing-price">₦7,000</div>
+      <div class="pricing-period">7-day campaign</div>
+      <div class="pricing-divider"></div>
+      <ul class="pricing-features">
+        <li>Posted daily for 7 days</li>
+        <li>25,000+ contacts reached</li>
+        <li>Express delivery within 3 hours</li>
+        <li>Pinned post in groups</li>
+        <li>Status + broadcast promotion</li>
+        <li>Performance report included</li>
+      </ul>
+      <button class="btn-plan btn-plan-outline" onclick="selectPlan('VIP - ₦7,000')">Get Started</button>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why" id="why">
+  <div class="why-grid">
+    <div class="why-visual reveal">
+      <span class="why-big-num">10K+</span>
+      <span class="why-big-label">Active WhatsApp contacts in our network</span>
+      <div class="why-mini-stats">
+        <div class="why-mini">
+          <span class="why-mini-num">500+</span>
+          <span class="why-mini-label">Happy Clients</span>
+        </div>
+        <div class="why-mini">
+          <span class="why-mini-num">98%</span>
+          <span class="why-mini-label">Satisfaction Rate</span>
+        </div>
+        <div class="why-mini">
+          <span class="why-mini-num">24h</span>
+          <span class="why-mini-label">Max Delivery Time</span>
+        </div>
+        <div class="why-mini">
+          <span class="why-mini-num">3yr</span>
+          <span class="why-mini-label">In Business</span>
+        </div>
+      </div>
+    </div>
+    <div class="reveal" style="--delay:0.15s">
+      <div class="section-label">Why Choose Us</div>
+      <h2 class="section-title">Real Reach.<br/>Real Results.</h2>
+      <div class="why-points">
+        <div class="why-point">
+          <div class="why-point-icon">🎯</div>
+          <div>
+            <h4>Targeted Nigerian Audience</h4>
+            <p>Our contacts are real, active Nigerians — not bots. Your link reaches people who actually buy.</p>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="why-point-icon">⚡</div>
+          <div>
+            <h4>Fast Turnaround</h4>
+            <p>Most orders are delivered within 24 hours of payment. VIP orders go out within 3 hours.</p>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="why-point-icon">🔒</div>
+          <div>
+            <h4>Safe & Trusted</h4>
+            <p>Hundreds of satisfied clients trust Emperor Boost to promote their businesses every day.</p>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="why-point-icon">💬</div>
+          <div>
+            <h4>24/7 Support</h4>
+            <p>Have a question? Reach us on WhatsApp anytime. We respond fast and treat every client like family.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="text-center reveal">
+    <div class="section-label">Reviews</div>
+    <h2 class="section-title">What Clients Say</h2>
+    <p class="section-sub">Don't just take our word for it — hear from people who've used Emperor Boost.</p>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card reveal" style="--delay:0.1s">
+      <div class="testi-quote-mark" aria-hidden="true">"</div>
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"I posted my fashion business link on the Premium plan and got over 40 new customers in 3 days. Emperor Boost is the real deal. Very fast and professional."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">AT</div>
+        <div>
+          <div class="testi-name">Amaka T.</div>
+          <div class="testi-role">Fashion Vendor, Lagos</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal" style="--delay:0.2s">
+      <div class="testi-quote-mark" aria-hidden="true">"</div>
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"I was skeptical at first but decided to try the Standard plan for ₦1,500. Got hundreds of views on my product page. I've now booked the VIP plan. Worth every kobo."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">KO</div>
+        <div>
+          <div class="testi-name">Kingsley O.</div>
+          <div class="testi-role">Online Store Owner, PH</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal" style="--delay:0.3s">
+      <div class="testi-quote-mark" aria-hidden="true">"</div>
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"My music link blew up after Emperor Boost shared it. I went from 200 streams to over 3,000 in one week. If you want visibility this is it."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">DE</div>
+        <div>
+          <div class="testi-name">DJ Emzy</div>
+          <div class="testi-role">Music Artist, Warri</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER FORM -->
+<section class="order" id="order">
+  <div class="text-center reveal">
+    <div class="section-label">Place Your Order</div>
+    <h2 class="section-title">Boost Your Link Today</h2>
+    <p class="section-sub">Fill in your details below and we'll get your link in front of thousands.</p>
+  </div>
+  <div class="order-wrap reveal" style="--delay:0.15s">
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Full Name</label>
+        <input class="form-input" id="f-name" type="text" placeholder="e.g. Emeka Johnson" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">WhatsApp Number</label>
+        <input class="form-input" id="f-phone" type="tel" placeholder="+234 800 000 0000" />
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Your Link or Business Name</label>
+      <input class="form-input" id="f-link" type="text" placeholder="e.g. https://wa.me/234... or 'Amaka's Fashion Store'" />
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Package</label>
+        <select class="form-select" id="f-plan">
+          <option value="" disabled selected>Select a package</option>
+          <option>Starter — ₦500</option>
+          <option>Standard — ₦1,500</option>
+          <option>Premium — ₦3,000</option>
+          <option>VIP — ₦7,000</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">What Are You Promoting?</label>
+        <select class="form-select" id="f-type">
+          <option value="" disabled selected>Select type</option>
+          <option>Business / Shop</option>
+          <option>WhatsApp Link / Group</option>
+          <option>Music / Video</option>
+          <option>Website / Blog</option>
+          <option>Job Opportunity</option>
+          <option>Event</option>
+          <option>Other</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Additional Message (Optional)</label>
+      <textarea class="form-textarea" id="f-msg" placeholder="Any special instructions or caption you want used..."></textarea>
+    </div>
+    <button class="btn-submit" id="btn-submit" onclick="submitBoostOrder()">
+      🚀 Send Order via WhatsApp
+    </button>
+    <p class="form-note">After submitting, you'll be redirected to WhatsApp to complete your order and send payment proof.</p>
+    <div class="form-success" id="form-success">
+      <p>✅ Order submitted! Complete your payment to confirm. We'll boost your link within 24 hours.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PAYMENT INFO -->
+<section class="payment" id="payment">
+  <div class="text-center reveal">
+    <div class="section-label">Payment</div>
+    <h2 class="section-title">How to Pay</h2>
+    <p class="section-sub">Simple bank transfer. Send proof and your order is confirmed.</p>
+  </div>
+  <div class="payment-grid">
+    <div class="payment-card reveal" style="--delay:0.1s">
+      <h3>🏦 Bank Transfer Steps</h3>
+      <ol class="payment-steps">
+        <li>Submit your order using the form above</li>
+        <li>Transfer the amount for your chosen package to our account below</li>
+        <li>Screenshot your payment confirmation</li>
+        <li>Send the screenshot to our WhatsApp number</li>
+        <li>We confirm and begin your promotion within 24 hours</li>
+      </ol>
+    </div>
+    <div class="payment-card reveal" style="--delay:0.2s">
+      <h3>💳 Bank Account Details</h3>
+      <div class="bank-details">
+        <div class="bank-row">
+          <span class="bank-key">Bank Name</span>
+          <span class="bank-val">Your Bank Name</span>
+        </div>
+        <div class="bank-row">
+          <span class="bank-key">Account Name</span>
+          <span class="bank-val">Emperor Boost</span>
+        </div>
+        <div class="bank-row">
+          <span class="bank-key">Account Number</span>
+          <span class="bank-val">0000000000</span>
+        </div>
+        <div class="bank-row">
+          <span class="bank-key">WhatsApp</span>
+          <span class="bank-val">+234 XXX XXX XXXX</span>
+        </div>
+      </div>
+      <p style="font-size:0.78rem;color:var(--muted);margin-top:0.75rem;font-style:italic;">⚠️ Always send payment proof on WhatsApp after transferring. Orders without proof cannot be confirmed.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="text-center reveal">
+    <div class="section-label">FAQ</div>
+    <h2 class="section-title">Got Questions?</h2>
+    <p class="section-sub">Everything you need to know about Emperor Boost.</p>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item reveal" style="--delay:0.05s">
+      <button class="faq-q" onclick="toggleFaq(this)">How quickly will my link be posted? <span class="faq-chevron">+</span></button>
+      <div class="faq-a"><p>Standard orders are delivered within 24 hours of payment confirmation. Premium orders within 6 hours and VIP orders within 3 hours.</p></div>
+    </div>
+    <div class="faq-item reveal" style="--delay:0.1s">
+      <button class="faq-q" onclick="toggleFaq(this)">Are the contacts real people? <span class="faq-chevron">+</span></button>
+      <div class="faq-a"><p>Yes, 100%. All our contacts are real, active Nigerian WhatsApp users. We do not use bots or fake accounts. Your link reaches real potential customers.</p></div>
+    </div>
+    <div class="faq-item reveal" style="--delay:0.15s">
+      <button class="faq-q" onclick="toggleFaq(this)">What can I promote? <span class="faq-chevron">+</span></button>
+      <div class="faq-a"><p>You can promote any legitimate business, product, service, music, website, WhatsApp group, event, or job opportunity. We do not promote illegal or harmful content.</p></div>
+    </div>
+    <div class="faq-item reveal" style="--delay:0.2s">
+      <button class="faq-q" onclick="toggleFaq(this)">What if I'm not satisfied? <span class="faq-chevron">+</span></button>
+      <div class="faq-a"><p>We take satisfaction seriously. If we fail to deliver your order as promised, contact us on WhatsApp and we will either re-post or offer a refund. Your satisfaction is our priority.</p></div>
+    </div>
+    <div class="faq-item reveal" style="--delay:0.25s">
+      <button class="faq-q" onclick="toggleFaq(this)">Can I upgrade my plan later? <span class="faq-chevron">+</span></button>
+      <div class="faq-a"><p>Yes! You can upgrade to a higher plan at any time by paying the difference. Contact us on WhatsApp to arrange an upgrade for your active campaign.</p></div>
+    </div>
+    <div class="faq-item reveal" style="--delay:0.3s">
+      <button class="faq-q" onclick="toggleFaq(this)">Is my payment safe? <span class="faq-chevron">+</span></button>
+      <div class="faq-a"><p>We use standard Nigerian bank transfer which is fully traceable. Always keep your payment confirmation. We have a clean track record with hundreds of satisfied clients.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo-text">Emperor<span>Boost</span></div>
+        <p class="footer-desc">Nigeria's most trusted WhatsApp link promotion service. We get your business seen by thousands of real people, fast.</p>
+        <div class="footer-socials">
+          <a href="https://wa.me/234XXXXXXXXXX" target="_blank" class="footer-social-btn" title="WhatsApp">💬</a>
+          <a href="https://www.instagram.com/" target="_blank" class="footer-social-btn" title="Instagram">📸</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Quick Links</div>
+        <ul class="footer-col-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#how">How It Works</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#why">Why Us</a></li>
+          <li><a href="#order">Place Order</a></li>
+          <li><a href="#payment">Payment Info</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <ul class="footer-col-links">
+          <li><a href="https://wa.me/234XXXXXXXXXX" target="_blank">WhatsApp Us</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#testimonials">Client Reviews</a></li>
+        </ul>
+        <div style="margin-top:1.5rem;">
+          <div class="footer-col-title">Working Hours</div>
+          <p style="font-size:0.85rem;color:var(--muted);line-height:1.8;">Mon – Sat: 8am – 10pm<br/>Sunday: 10am – 8pm</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2026 Emperor Boost. All rights reserved.</p>
+      <p class="footer-credit">Built by <a href="https://emperor-portfolio.vercel.app" target="_blank">Idabor Kelvin</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP BUTTON -->
+<a href="https://wa.me/234XXXXXXXXXX" target="_blank" class="float-wa" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
+  <span class="float-wa-icon">💬</span>
+  <span class="float-wa-label">Chat Us</span>
+</a>
+
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+<script src="script.js"></script>
+</body>
+</html>
