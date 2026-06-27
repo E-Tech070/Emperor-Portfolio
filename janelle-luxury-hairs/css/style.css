@@ -686,3 +686,213 @@ section { padding: 7rem 2rem; }
   .filter-btn { padding: 0.5rem 1rem; font-size: 0.7rem; }
   .hero-title { font-size: clamp(2.2rem, 10vw, 3.5rem); }
 }
+
+
+
+
+/* ============================================================
+   JANELLE — MOBILE FIXES
+   Add these rules at the bottom of css/style.css
+   ============================================================ */
+
+/* ── HERO — full image on mobile ── */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100svh; /* use small viewport height on mobile */
+    align-items: flex-end;
+    padding-bottom: 4rem;
+  }
+  .hero-bg-img {
+    background-position: center top;
+    background-size: cover;
+  }
+  .hero-content {
+    padding: 1.5rem 1.25rem;
+    text-align: center;
+  }
+  .hero-overlay {
+    background: linear-gradient(
+      to top,
+      rgba(8,8,8,0.92) 0%,
+      rgba(8,8,8,0.55) 50%,
+      rgba(8,8,8,0.25) 100%
+    );
+  }
+  .hero-scroll { display: none; }
+}
+
+/* ── ABOUT — image and badge on mobile ── */
+@media (max-width: 768px) {
+  .about-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .about-img-frame {
+    margin-bottom: 2rem; /* room for the badge */
+  }
+  .about-img {
+    aspect-ratio: 4/3; /* wider on mobile, not portrait */
+    width: 100%;
+    border-radius: 8px;
+  }
+  .about-img-badge {
+    bottom: -1.25rem;
+    right: 1rem;
+    padding: 0.9rem 1.1rem;
+  }
+  .badge-num { font-size: 1.6rem; }
+  .badge-text { font-size: 0.62rem; }
+  .about-text-col { padding-left: 0; }
+  .about-stats {
+    flex-direction: row;
+    gap: 0;
+    justify-content: space-around;
+  }
+  .stat { flex: 1; }
+}
+
+/* ── NEW ARRIVALS — 2 columns on mobile ── */
+@media (max-width: 768px) {
+  .arrivals-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.85rem;
+  }
+  .arrival-name { font-size: 0.82rem; }
+  .arrival-detail { font-size: 0.76rem; }
+  .arrival-price { font-size: 0.88rem; }
+  /* Always show order button on mobile — no hover needed */
+  .arrival-actions {
+    transform: translateY(0);
+    background: linear-gradient(to top, rgba(8,8,8,0.98), rgba(8,8,8,0.3));
+  }
+}
+
+@media (max-width: 400px) {
+  .arrivals-grid { grid-template-columns: 1fr; }
+}
+
+/* ── SHOP GRID — 2 columns on mobile ── */
+@media (max-width: 768px) {
+  .shop-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.85rem;
+    padding: 0 0.25rem;
+  }
+  .product-name { font-size: 0.82rem; }
+  .product-desc { font-size: 0.78rem; }
+  .product-price { font-size: 0.9rem; }
+  /* Always show order button on mobile */
+  .product-actions {
+    transform: translateY(0);
+    background: linear-gradient(to top, rgba(8,8,8,0.98), rgba(8,8,8,0.3));
+  }
+}
+
+@media (max-width: 400px) {
+  .shop-grid { grid-template-columns: 1fr; }
+}
+
+/* ── ACCESSORIES — 2 columns on mobile ── */
+@media (max-width: 768px) {
+  .acc-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.85rem;
+  }
+  .acc-info h4 { font-size: 0.8rem; }
+  .acc-info p { font-size: 0.72rem; }
+  .acc-price { font-size: 0.85rem; }
+  /* Always show overlay on mobile */
+  .acc-overlay {
+    opacity: 1;
+    background: rgba(8,8,8,0.45);
+  }
+  .acc-order-btn { font-size: 0.65rem; padding: 0.5rem 0.75rem; }
+  .acc-category-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+/* ── COLLECTIONS GRID — 2 columns on mobile ── */
+@media (max-width: 768px) {
+  .categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.85rem;
+  }
+  .category-info h3 { font-size: 0.88rem; }
+  .category-info p { font-size: 0.78rem; }
+}
+
+/* ── GALLERY — better on mobile ── */
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+  .gallery-item--tall { grid-row: span 1; aspect-ratio: 1/1; }
+  .gallery-item--wide { grid-column: span 2; aspect-ratio: 16/9; }
+}
+
+/* ── SERVICES — 1 column on mobile ── */
+@media (max-width: 768px) {
+  .services-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .service-card--highlight { grid-column: span 1; }
+}
+
+/* ── CONTACT — stack on mobile ── */
+@media (max-width: 768px) {
+  .contact-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .quick-order-options {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+  }
+  .quick-opt--gold { grid-column: span 2; }
+}
+
+/* ── WHY US — 2 columns on mobile ── */
+@media (max-width: 768px) {
+  .why-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+}
+@media (max-width: 400px) {
+  .why-grid { grid-template-columns: 1fr; }
+}
+
+/* ── BLOG — 1 column on mobile ── */
+@media (max-width: 768px) {
+  .blog-grid { grid-template-columns: 1fr; }
+}
+
+/* ── SECTION PADDING — tighter on mobile ── */
+@media (max-width: 768px) {
+  section { padding: 3.5rem 1.1rem; }
+  .section-header { margin-bottom: 2.25rem; }
+  .section-title { font-size: clamp(1.6rem, 6vw, 2.2rem); }
+}
+
+/* ── IMAGE LOADING — performance ── */
+img {
+  content-visibility: auto;
+}
+
+/* ── TOUCH TARGETS — bigger tap areas on mobile ── */
+@media (max-width: 768px) {
+  .btn-icon { width: 44px; height: 44px; }
+  .acc-wa-btn { width: 36px; height: 36px; }
+  .filter-btn { padding: 0.6rem 1rem; min-height: 44px; }
+  .qty-btn { width: 36px; height: 36px; }
+}
+
+/* ── FOOTER — tighter on mobile ── */
+@media (max-width: 768px) {
+  .footer-links { gap: 1rem; }
+  .footer-links a { font-size: 0.7rem; }
+}
+
+/* ── NAV DROPDOWN — disable on mobile (links go to sections) ── */
+@media (max-width: 768px) {
+  .dropdown-menu { display: none !important; }
+  .dropdown-arrow { display: none; }
+}
