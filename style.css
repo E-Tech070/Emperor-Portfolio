@@ -2,7 +2,6 @@
    EMPEROR PORTFOLIO — Upgraded Stylesheet
    ============================================================ */
 
-
 /* ── RESET ── */
 *,
 *::before,
@@ -809,10 +808,16 @@ ul {
   margin-bottom: 50px;
 }
 
-.featured-card {
+.featured-cards-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.featured-card {
+  display: flex;
+  flex-direction: column;
   background: #141414;
   border: 1px solid #2a2a2a;
   border-radius: 20px;
@@ -982,7 +987,7 @@ ul {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   text-align: left;
 }
@@ -1527,6 +1532,9 @@ ul {
   }
   .skills-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .featured-cards-list {
+    grid-template-columns: 1fr;
   }
   .featured-card {
     grid-template-columns: 1fr;
