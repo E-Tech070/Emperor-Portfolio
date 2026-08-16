@@ -108,6 +108,46 @@ nav.scrolled {
   transform: translateY(-1px);
 }
 
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 30px;
+  height: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 101;
+}
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  border-radius: 2px;
+  background: #fff;
+  transition:
+    transform 0.3s,
+    opacity 0.3s,
+    background 0.3s;
+}
+nav.scrolled .hamburger span {
+  background: var(--text);
+}
+.hamburger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+.hamburger.active span {
+  background: var(--text);
+}
+
 /* HERO */
 .hero {
   min-height: 100vh;
@@ -957,7 +997,36 @@ footer {
     border-right: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
+  .hamburger {
+    display: flex;
+  }
   .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--bg);
+    padding: 1.5rem 5% 2rem;
+    gap: 1.4rem;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(-12px);
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      opacity 0.25s,
+      transform 0.25s;
+  }
+  .nav-links.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  .nav-links a {
+    color: var(--text);
+  }
+  .nav-order {
     display: none;
   }
   .hero-dish {
@@ -975,5 +1044,40 @@ footer {
   .order-details,
   .order-submit-btn {
     grid-column: auto !important;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 3.5rem 6%;
+  }
+  .logo {
+    font-size: 1.4rem;
+  }
+  .logo-img {
+    width: 36px;
+    height: 36px;
+  }
+  .menu-panel.active {
+    grid-template-columns: 1fr;
+  }
+  .services-grid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  }
+  .popular-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .test-card {
+    padding: 1.5rem;
+  }
+  .hero-btns {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero-btns a {
+    text-align: center;
   }
 }

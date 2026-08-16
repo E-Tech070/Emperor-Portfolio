@@ -5,6 +5,16 @@ window.addEventListener("scroll", () => {
     .classList.toggle("scrolled", window.scrollY > 60);
 });
 
+// Mobile hamburger menu
+function toggleMenu() {
+  document.getElementById("navLinks").classList.toggle("open");
+  document.getElementById("hamburger").classList.toggle("active");
+}
+function closeMenu() {
+  document.getElementById("navLinks").classList.remove("open");
+  document.getElementById("hamburger").classList.remove("active");
+}
+
 // Menu tabs
 function switchTab(id, btn) {
   document
